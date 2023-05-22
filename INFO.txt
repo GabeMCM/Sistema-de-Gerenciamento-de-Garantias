@@ -4,7 +4,7 @@
         // GET - PEGA UMA INFO
         // POST - CRIA UMA INFO
         // PUT - ALTERA TODA A INFO
-        // PATH - ALTERA PARTE DA INFO
+        // PATCH - ALTERA PARTE DA INFO
         // DELETE - APAGA UMA INFO 
     
     // NAME 
@@ -12,3 +12,14 @@
     
     // FUNCTION(CALLBACK)
         // RESPONSAVEL POR EXECUTAR ALGUM COMANDO
+
+
+
+{
+  "name": "gabe",
+  "username": "gabe",
+  "email": "email@email.com",
+  "password": "12345",
+  "avatar": "https://avatars.githubusercontent.com/u/123529056?v=4",
+  "background": "url"
+}
