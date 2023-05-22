@@ -1,17 +1,19 @@
 {
-  "name": "garantia",
-  "version": "1.0.0",
-  "description": "projeto para lançamento de garantia",
-  "main": "index.js",
-  "scripts": {
-    "start": "node index",
-    "dev": "nodemon index"
-  },
-  "author": "gmcm",
-  "license": "ISC",
-  "dependencies": {
-    "ejs": "^3.1.9",
-    "express": "^4.18.2",
-    "nodemon": "^2.0.22"
-  }
+	"name": "garantia",
+	"version": "1.0.0",
+	"description": "projeto para lançamento de garantia",
+	"main": "index.js",
+	"scripts": {
+		"start": "node index",
+		"dev": "nodemon index"
+	},
+	"author": "gmcm",
+	"license": "ISC",
+	"dependencies": {
+		"ejs": "^3.1.9",
+		"express": "^4.18.2",
+		"mongodb": "^5.5.0",
+		"mongoose": "^7.2.0",
+		"nodemon": "^2.0.22"
+	}
 }
