@@ -15,6 +15,9 @@ app.set("view engine", "ejs");
 //USA OS ARQUIVOS DA PASTAS PUBLIC
 app.use(express.static(path.join(__dirname, "public")));
 
+//O SERVIDOR CONSEGUE RECEBER UM FORMULARIO PELO BODY
+app.use(express.urlencoded());
+
 //USA AS ROTAS
 app.use(routes);
 

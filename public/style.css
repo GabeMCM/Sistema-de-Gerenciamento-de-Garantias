@@ -11,6 +11,9 @@ body {
 	color: white;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 14px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 label {
@@ -20,17 +23,17 @@ label {
 
 main {
 	background-color: #191970;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-.parte-um {
-	background-color: #3f3f9d;
-	height: 90%;
-	width: 90%;
+	width: 70vw;
+	height: 70vh;
 	display: flex;
 	flex-direction: column;
+	justify-content:space-around;
+	align-items:center;
+	position: relative;
+}
+
+.partes {
+	background-color: #3f3f9d;
 }
 
 .linhas {

@@ -9,129 +9,163 @@
 
 	<body>
 		<main>
-			<form action="">
+			<form action="/create" method="post">
 				<!-- ********************* PARTE UM ********************* -->
-				<section class="parte-um">
+				<section class="parte-um partes">
 					<!-- ----------------LINHA UM---------------- -->
 					<div class="linha-um linhas"> 
+
 						<div class="box">
 							<label for="loja">Loja</label>
 							<select id="loja">
-								<option value="UBERAUPE">
+								<option name="task1" value="UBERAUPE">
 									Uberaupe - Uberaba Auto Peças LTDA.
 								</option>
-								<option value="UBERAUTO">Uberauto - Uberaba Acessórios.</option>
+								<option name="task2" value="UBERAUTO">
+                  Uberauto - Uberaba Acessórios.
+                </option>
 							</select>
 						</div>
+
 						<div class="box">
 							<label for="data-lanc-dados">Data</label>
-							<input id="data-lanc-dados" type="date" />
+							<input  name="task3" id="data-lanc-dados" type="date" />
 						</div>
+
 						<div class="box">
 							<label for="responsavel">Responsável</label>
 							<select id="responsavel">
-								<option value="gisney">Gisney</option>
-								<option value="gabriel">Gabriel</option>
+								<option  name="task4" value="gisney">Gisney</option>
+								<option  name="task5" value="gabriel">Gabriel</option>
 							</select>
 						</div>
+
 					</div>
 					<!-- ----------------LINHA DOIS---------------- -->
 					<div class="linha-dois linhas"> 
+
 						<div class="box">
 							<label for="cod-prod-loja">Código Interno Produto</label>
-							<input id="cod-prod-loja" type="number" />
+							<input  name="task6" id="cod-prod-loja" type="number" />
 						</div>
+
 						<div class="box">
 							<label for="produto">Produto</label>
-							<input id="produto" type="text" />
+							<input name="task7" id="produto" type="text" />
 						</div>
+
 						<div class="box">
 							<label for="cod-forn">Codigo Fornecedor</label>
-							<input id="cod-forn" type="number" />
+							<input name="task8" id="cod-forn" type="number" />
 						</div>
+
 						<div class="box">
 							<label for="fornecedor">Fornecedor</label>
-							<input id="fornecedor" type="text" />
+							<input name="task9" id="fornecedor" type="text" />
 						</div>
+
 					</div>
 					<!-- ----------------LINHA TRES---------------- -->
 					<div class="linha-tres linhas"> 
+
 						<div class="box">
 							<label for="nf-compra">NF Compra</label>
-							<input id="nf-compra" type="number" />
+							<input name="task10" id="nf-compra" type="number" />
 						</div>
+
 						<div class="box">
 							<label for="data-emissao-nf-compra">Emissão</label>
-							<input id="data-emissao-nf-compra" type="date" />
+							<input name="task11" id="data-emissao-nf-compra" type="date" />
 						</div>
+
 						<div class="box">
 							<label for="cod-prod-nf">Cod Produto na Nota</label>
-							<input id="cod-prod-nf" type="number" />
+							<input name="task12" id="cod-prod-nf" type="number" />
 						</div>
+
 						<div class="box">
 							<label for="quantidade">Quantidade</label>
-							<input id="quantidade" type="number" />
+							<input name="task13" id="quantidade" type="number" />
 						</div>
+
 						<div class="box">
 							<label for="valor-unit">Valor</label>
-							<input id="valor-unit" type="number" />
+							<input name="task14" id="valor-unit" type="number" />
 						</div>
+
 					</div>
 					<!-- ----------------LINHA QUATRO---------------- -->
 					<div class="linha-quatro linhas">
+
 						<div class="box">
 							<label for="desc-defeito">Descrição do defeito</label>
-							<input id="desc-defeito" type="text"/>
+							<input name="task15" id="desc-defeito" type="text"/>
 						</div>
+
 						<div class="box">
 							<label for="valor-total">Emissão</label>
-							<input id="valor-total" type="number"/>
+							<input name="task16" id="valor-total" type="number"/>
 						</div>
+
 					</div>
 				</section>
 
 				<!-- ********************* PARTE DOIS ********************* -->
-				<section class="parte-dois">
+				<section class="parte-dois partes">
 					<!-- ----------------LINHA CINCO---------------- -->
 					<div class="linha-cinco linhas"> 
+
 						<div class="box">
 							<label for="nf-venda">NF Venda</label>
-							<input id="nf-venda" type="number" />
+							<input name="task17" id="nf-venda" type="number" />
 						</div>
+
 						<div class="box">
 							<label for="data-emissao-nf-venda">Emissão</label>
-							<input id="data-emissao-nf-venda" type="date" />
+							<input name="task18" id="data-emissao-nf-venda" type="date" />
 						</div>
+
 						<div class="box">
 							<label for="nome-cliente">Nome do Cliente</label>
-							<input id="nome-cliente" type="text" />
+							<input name="task19" id="nome-cliente" type="text" />
 						</div>
+
 					</div>
 				</section>
 
 				<!-- ********************* PARTE TRES ********************* -->
-				<section class="parte-tres">
+				<section class="parte-tres partes">
 					<!-- ----------------LINHA SEIS---------------- -->
 					<div class="linha-seis linhas"> 
+
 						<div class="box">
 							<label for="num-os">N° OS</label>
-							<input id="num-os" type="number" />
+							<input name="task20" id="num-os" type="number" />
 						</div>
+
 						<div class="box">
 							<label for="nf-garantia">NF Garantia</label>
-							<input id="nf-garantia" type="number" />
+							<input  name="task21"id="nf-garantia" type="number" />
 						</div>
+
 						<div class="box">
 							<label for="data-emissao-nf-venda">Emissão</label>
-							<input id="data-emissao-nf-venda" type="date" />
+							<input  name="task22" id="data-emissao-nf-venda" type="date" />
 						</div>
+
 					</div>
 					<!-- ----------------LINHA SETE---------------- -->
 					<div class="linha-sete linhas"> 
+
 						<div class="box">
 							<label for="obs">Obs</label>
-							<input id="obs" type="text" />
+							<input name="task23" id="obs" type="text" />
 						</div>
+
+            <div class="box">
+							<button id="obs" type="submit">Adicionar</button>
+						</div>
+
 					</div>
 				</section>
 

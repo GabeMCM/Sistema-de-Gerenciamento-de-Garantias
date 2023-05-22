@@ -5,6 +5,10 @@ const taskSchema = new mongoose.Schema({
 		type: String,
 		require: true,
 	},
+	teste: {
+		type: Number,
+		require: true,
+	},
 	check: {
 		type: Boolean,
 		require: true,
