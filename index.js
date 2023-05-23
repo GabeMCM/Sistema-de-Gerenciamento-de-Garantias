@@ -1,13 +1,16 @@
 const express = require("express");
 const path = require("path");
 const userRoute = require("./src/routes/user.routes");
-//const connectToDb = require("./database/db");
+const connectDatabse = require("./src/database/db");
 
 const app = express();
 const port = 3000;
 
 //INFORMA AO EXPRESS QUE VOU USAR JSON
 app.use(express.json());
+
+//CONECTANDO COM DATABASE
+connectDatabse();
 
 //INFORMA QUE A ENGINE USADE É A EJS(PODE USAR HANDLEBARS, PUG, ETC...)
 //app.set("view engine", "ejs");

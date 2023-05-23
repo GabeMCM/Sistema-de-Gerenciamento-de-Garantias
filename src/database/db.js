@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 
-const connectToDb = () => {
+const connectDatabse = () => {
+	console.log("Wait connectiong to the database");
 	mongoose
 		.connect(
 			"mongodb+srv://adm:123@cluster0.f9glqkb.mongodb.net/?retryWrites=true&w=majority",
@@ -9,8 +10,8 @@ const connectToDb = () => {
 				useUnifiedTopology: true,
 			}
 		)
-		.then(() => console.log("MongoDB Atlas CONECTADO"))
-		.catch((err) => console.log(err));
+		.then(() => console.log("MongoDB Atlas Connected"))
+		.catch((error) => console.log(error));
 };
 
-module.exports = connectToDb;
+module.exports = connectDatabse;

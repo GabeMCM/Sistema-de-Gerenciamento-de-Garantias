@@ -16,15 +16,12 @@
 					<div class="linha-um linhas"> 
 
 						<div class="box">
-							<label for="loja">Loja</label>
-							<select id="loja">
-								<option name="task1" value="UBERAUPE">
-									Uberaupe - Uberaba Auto Peças LTDA.
-								</option>
-								<option name="task2" value="UBERAUTO">
-                  Uberauto - Uberaba Acessórios.
-                </option>
-							</select>
+							<label for="lojas">Loja</label>
+							<input list="lojas" name="lojas">
+							<datalist id="lojas">
+								<option value="Uberaupe - Uberaba Auto Peças LTDA.">
+								<option value="Uberauto - Uberaba Acessórios.">
+							</datalist>
 						</div>
 
 						<div class="box">
@@ -34,10 +31,11 @@
 
 						<div class="box">
 							<label for="responsavel">Responsável</label>
-							<select id="responsavel">
-								<option  name="task4" value="gisney">Gisney</option>
-								<option  name="task5" value="gabriel">Gabriel</option>
-							</select>
+							<input list="responsavel" name="responsavel">
+							<datalist id="responsavel">
+								<option value="Gisney">
+								<option value="Gabriel">
+							</datalist>		
 						</div>
 
 					</div>
@@ -103,7 +101,7 @@
 						</div>
 
 						<div class="box">
-							<label for="valor-total">Emissão</label>
+							<label for="valor-total">Valor Total</label>
 							<input name="task16" id="valor-total" type="number"/>
 						</div>
 
@@ -163,7 +161,7 @@
 						</div>
 
             <div class="box">
-							<button id="obs" type="submit">Adicionar</button>
+							<button id="submit" type="submit">Adicionar</button>
 						</div>
 
 					</div>
