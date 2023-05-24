@@ -13,13 +13,16 @@ app.use(express.json());
 connectDatabse();
 
 //INFORMA QUE A ENGINE USADE É A EJS(PODE USAR HANDLEBARS, PUG, ETC...)
-//app.set("view engine", "ejs");
+app.set("view engine", "ejs");
+
+//
+app.use(express.urlencoded());
 
 //USA OS ARQUIVOS DA PASTAS PUBLIC
-//app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "public")));
 
 //USA AS ROTAS
-app.use("/user", userRoute);
+app.use("/", userRoute);
 
 //INICIA EM LOCALHOST UM SERVIDOR QUE RODA O PROGRAMA
 app.listen(port, () =>

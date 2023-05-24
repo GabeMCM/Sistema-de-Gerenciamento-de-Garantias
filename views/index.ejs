@@ -9,7 +9,7 @@
 
 	<body>
 		<main>
-			<form action="/create" method="post">
+			<form action="/save" method="post">
 				<!-- ********************* PARTE UM ********************* -->
 				<section class="parte-um partes">
 					<!-- ----------------LINHA UM---------------- -->
@@ -17,25 +17,28 @@
 
 						<div class="box">
 							<label for="lojas">Loja</label>
-							<input list="lojas" name="lojas">
+							<!--<input list="lojas" name="lojas">
 							<datalist id="lojas">
 								<option value="Uberaupe - Uberaba Auto Peças LTDA.">
 								<option value="Uberauto - Uberaba Acessórios.">
-							</datalist>
+							</datalist>-->
+							<select id="lojas" name="lojas">
+								<option value="Uberaupe - Uberaba Auto Peças LTDA.">Uberaupe - Uberaba Auto Peças LTDA.</option>
+								<option value="Uberauto - Uberaba Acessórios.">Uberauto - Uberaba Acessórios.</option>
+							</select>
 						</div>
 
 						<div class="box">
-							<label for="data-lanc-dados">Data</label>
-							<input  name="task3" id="data-lanc-dados" type="date" />
+							<label for="data">Data</label>
+							<input name="data" id="data" type="date" />
 						</div>
 
 						<div class="box">
 							<label for="responsavel">Responsável</label>
-							<input list="responsavel" name="responsavel">
-							<datalist id="responsavel">
-								<option value="Gisney">
-								<option value="Gabriel">
-							</datalist>		
+							<select id="responsavel" name="responsavel">
+								<option value="Gisney">Gisney</option>
+								<option value="Gabriel">Gabriel</option>
+							</select>
 						</div>
 
 					</div>
@@ -43,23 +46,23 @@
 					<div class="linha-dois linhas"> 
 
 						<div class="box">
-							<label for="cod-prod-loja">Código Interno Produto</label>
-							<input  name="task6" id="cod-prod-loja" type="number" />
+							<label for="codInt">Código Interno Produto</label>
+							<input  name="codInt" id="codInt" type="number" />
 						</div>
 
 						<div class="box">
 							<label for="produto">Produto</label>
-							<input name="task7" id="produto" type="text" />
+							<input name="produto" id="produto" type="text" />
 						</div>
 
 						<div class="box">
-							<label for="cod-forn">Codigo Fornecedor</label>
-							<input name="task8" id="cod-forn" type="number" />
+							<label for="codFornecedor">Codigo Fornecedor</label>
+							<input name="codFornecedor" id="codFornecedor" type="number" />
 						</div>
 
 						<div class="box">
 							<label for="fornecedor">Fornecedor</label>
-							<input name="task9" id="fornecedor" type="text" />
+							<input name="fornecedor" id="fornecedor" type="text" />
 						</div>
 
 					</div>
@@ -67,28 +70,28 @@
 					<div class="linha-tres linhas"> 
 
 						<div class="box">
-							<label for="nf-compra">NF Compra</label>
-							<input name="task10" id="nf-compra" type="number" />
+							<label for="nfCompra">NF Compra</label>
+							<input name="nfCompra" id="nfCompra" type="number" />
 						</div>
 
 						<div class="box">
-							<label for="data-emissao-nf-compra">Emissão</label>
-							<input name="task11" id="data-emissao-nf-compra" type="date" />
+							<label for="emissaoNfCompra">Emissão</label>
+							<input name="emissaoNfCompra" id="emissaoNfCompra" type="date" />
 						</div>
 
 						<div class="box">
-							<label for="cod-prod-nf">Cod Produto na Nota</label>
-							<input name="task12" id="cod-prod-nf" type="number" />
+							<label for="codigoProdutoFornecedor">Cod Produto na Nota</label>
+							<input name="codigoProdutoFornecedor" id="codigoProdutoFornecedor" type="number" />
 						</div>
 
 						<div class="box">
 							<label for="quantidade">Quantidade</label>
-							<input name="task13" id="quantidade" type="number" />
+							<input name="quantidade" id="quantidade" type="number" />
 						</div>
 
 						<div class="box">
-							<label for="valor-unit">Valor</label>
-							<input name="task14" id="valor-unit" type="number" />
+							<label for="valorUniNota">Valor</label>
+							<input name="valorUniNota" id="valorUniNota" type="number" step="0.01"/>
 						</div>
 
 					</div>
@@ -96,13 +99,13 @@
 					<div class="linha-quatro linhas">
 
 						<div class="box">
-							<label for="desc-defeito">Descrição do defeito</label>
-							<input name="task15" id="desc-defeito" type="text"/>
+							<label for="descDefeito">Descrição do defeito</label>
+							<input name="descDefeito" id="descDefeito" type="text"/>
 						</div>
 
 						<div class="box">
-							<label for="valor-total">Valor Total</label>
-							<input name="task16" id="valor-total" type="number"/>
+							<label for="valorTotal">Valor Total</label>
+							<input name="valorTotal" id="valorTotal" type="number" step="0.01"/>
 						</div>
 
 					</div>
@@ -114,18 +117,18 @@
 					<div class="linha-cinco linhas"> 
 
 						<div class="box">
-							<label for="nf-venda">NF Venda</label>
-							<input name="task17" id="nf-venda" type="number" />
+							<label for="nfVenda">NF Venda</label>
+							<input name="nfVenda" id="nfVenda" type="number" />
 						</div>
 
 						<div class="box">
-							<label for="data-emissao-nf-venda">Emissão</label>
-							<input name="task18" id="data-emissao-nf-venda" type="date" />
+							<label for="emissaoNfVenda">Emissão</label>
+							<input name="emissaoNfVenda" id="emissaoNfVenda" type="date" />
 						</div>
 
 						<div class="box">
-							<label for="nome-cliente">Nome do Cliente</label>
-							<input name="task19" id="nome-cliente" type="text" />
+							<label for="nomeCliente">Nome do Cliente</label>
+							<input name="nomeCliente" id="nomeCliente" type="text" />
 						</div>
 
 					</div>
@@ -137,18 +140,18 @@
 					<div class="linha-seis linhas"> 
 
 						<div class="box">
-							<label for="num-os">N° OS</label>
-							<input name="task20" id="num-os" type="number" />
+							<label for="numOs">N° OS</label>
+							<input name="numOs" id="numOs" type="number" />
 						</div>
 
 						<div class="box">
-							<label for="nf-garantia">NF Garantia</label>
-							<input  name="task21"id="nf-garantia" type="number" />
+							<label for="nfGarantia">NF Garantia</label>
+							<input  name="nfGarantia"id="nfGarantia" type="number" />
 						</div>
 
 						<div class="box">
-							<label for="data-emissao-nf-venda">Emissão</label>
-							<input  name="task22" id="data-emissao-nf-venda" type="date" />
+							<label for="emissaoNfGarantia">Emissão</label>
+							<input  name="emissaoNfGarantia" id="emissaoNfGarantia" type="date" />
 						</div>
 
 					</div>
@@ -156,8 +159,8 @@
 					<div class="linha-sete linhas"> 
 
 						<div class="box">
-							<label for="obs">Obs</label>
-							<input name="task23" id="obs" type="text" />
+							<label for="observacao">Obs</label>
+							<input name="observacao" id="observacao" type="text" />
 						</div>
 
             <div class="box">

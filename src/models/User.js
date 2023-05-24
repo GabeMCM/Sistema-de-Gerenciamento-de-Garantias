@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const UserSchema = new mongoose.Schema({
-	loja: {
+	lojas: {
 		type: String,
 		require: true,
 	},
@@ -14,7 +14,7 @@ const UserSchema = new mongoose.Schema({
 		require: true,
 	},
 	codInt: {
-		type: String,
+		type: Number,
 		require: true,
 	},
 	produto: {
@@ -22,7 +22,7 @@ const UserSchema = new mongoose.Schema({
 		require: true,
 	},
 	codFornecedor: {
-		type: String,
+		type: Number,
 		require: true,
 	},
 	fornecedor: {
@@ -30,7 +30,7 @@ const UserSchema = new mongoose.Schema({
 		require: true,
 	},
 	nfCompra: {
-		type: String,
+		type: Number,
 		require: true,
 	},
 	emissaoNfCompra: {
@@ -38,15 +38,15 @@ const UserSchema = new mongoose.Schema({
 		require: true,
 	},
 	codigoProdutoFornecedor: {
-		type: String,
+		type: Number,
 		require: true,
 	},
 	quantidade: {
-		type: String,
+		type: Number,
 		require: true,
 	},
 	valorUniNota: {
-		type: String,
+		type: Number,
 		require: true,
 	},
 	descDefeito: {
@@ -54,7 +54,7 @@ const UserSchema = new mongoose.Schema({
 		require: true,
 	},
 	nfVenda: {
-		type: String,
+		type: Number,
 		require: true,
 	},
 	emissaoNfVenda: {
@@ -66,11 +66,11 @@ const UserSchema = new mongoose.Schema({
 		require: true,
 	},
 	numOs: {
-		type: String,
+		type: Number,
 		require: true,
 	},
 	nfGarantia: {
-		type: String,
+		type: Number,
 		require: true,
 	},
 	emissaoNfGarantia: {
@@ -82,7 +82,7 @@ const UserSchema = new mongoose.Schema({
 		require: true,
 	},
 	check: {
-		type: String,
+		type: Boolean,
 		require: true,
 	},
 	dataSave: {
@@ -91,4 +91,6 @@ const UserSchema = new mongoose.Schema({
 	},
 });
 
-module.exports = mongoose.model("Task", UserSchema);
+const User = mongoose.model("User", UserSchema);
+
+module.exports = User;

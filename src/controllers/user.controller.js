@@ -1,22 +1,28 @@
-//MÉTODOS DA ROTA
-const create = (req, res) => {
-	const { name, username, email, password, avatar, background } = req.body;
-	if (!name || !username || !email || !password || !avatar || !background) {
-		res.status(400).send({ message: "Submit all fields for registration" });
+const userService = require("../models/User");
+
+const getAll = async (req, res) => {
+	try {
+		const dataList = await userService.find();
+		return res.render("index", dataList);
+	} catch (err) {
+		res.status(500).send({ error: err.message });
 	}
-	res.status(201).send({
-		message: "User created successfully",
-		user: {
-			name,
-			username,
-			email,
-			avatar,
-			background,
-		},
-	});
+};
+
+//MÉTODOS DA ROTA
+const save = async (req, res) => {
+	const lojas = req.body;
+
+	try {
+		await userService.create(lojas);
+		return res.redirect("/");
+	} catch (err) {
+		res.status(500).send({ error: err.message });
+	}
 };
 
 //EXPORTA OS MÉTODOS
 module.exports = {
-	create,
+	save,
+	getAll,
 };

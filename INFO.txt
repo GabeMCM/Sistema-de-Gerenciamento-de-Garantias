@@ -23,3 +23,26 @@
   "avatar": "https://avatars.githubusercontent.com/u/123529056?v=4",
   "background": "url"
 }
+
+    loja: 
+	data: 
+	responsavel: 
+	codInt: 
+	produto: 
+	codFornecedor: 
+	fornecedor: 
+	nfCompra: 
+	emissaoNfCompra: 
+	codigoProdutoFornecedor: 
+	quantidade: 
+	valorUniNota: 
+	descDefeito: 
+	nfVenda: 
+	emissaoNfVenda: 
+	nomeCliente: 
+	numOs: 
+	nfGarantia: 
+	emissaoNfGarantia: 
+	observacao: 
+	check: 
+	dataSave
