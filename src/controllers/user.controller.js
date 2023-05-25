@@ -1,8 +1,8 @@
-const userService = require("../models/User");
+const user = require("../models/User");
 
 const getAll = async (req, res) => {
 	try {
-		const dataList = await userService.find();
+		const dataList = await user.find();
 		return res.render("index", dataList);
 	} catch (err) {
 		res.status(500).send({ error: err.message });
@@ -14,7 +14,7 @@ const save = async (req, res) => {
 	const lojas = req.body;
 
 	try {
-		await userService.create(lojas);
+		await user.create(lojas);
 		return res.redirect("/");
 	} catch (err) {
 		res.status(500).send({ error: err.message });
