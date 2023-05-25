@@ -14,17 +14,7 @@
         // RESPONSAVEL POR EXECUTAR ALGUM COMANDO
 
 
-
-{
-  "name": "gabe",
-  "username": "gabe",
-  "email": "email@email.com",
-  "password": "12345",
-  "avatar": "https://avatars.githubusercontent.com/u/123529056?v=4",
-  "background": "url"
-}
-
-    loja: 
+  loja: 
 	data: 
 	responsavel: 
 	codInt: 
@@ -46,3 +36,10 @@
 	observacao: 
 	check: 
 	dataSave
+
+//rascunho
+<input list="lojas" name="lojas">
+<datalist id="lojas">
+	<option value="Uberaupe - Uberaba Auto Peças LTDA.">
+	<option value="Uberauto - Uberaba Acessórios.">
+</datalist>

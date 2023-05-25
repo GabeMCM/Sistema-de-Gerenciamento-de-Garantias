@@ -3,6 +3,38 @@
 	padding: 0;
 }
 
+section {
+	align-items: flex-start;
+	justify-content: flex-start;
+}
+
+.partes {
+	background-color: #3f3f9d;
+	border-radius: 10px;
+	width: 93%;
+	margin: 10px;
+}
+
+.parte-tres {
+	margin-bottom: 0px;
+}
+
+.parte-um {
+	margin-bottom: 0px;
+}
+
+.parte-dois {
+	margin-bottom: 0px;
+}
+
+form {
+	display: grid;
+	width: 100%;
+	height: fit-content;
+	grid-template-columns: 1fr;
+	justify-items: center;
+}
+
 html,
 body {
 	box-sizing: border-box;
@@ -12,8 +44,7 @@ body {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 14px;
 	display: flex;
-	justify-content: center;
-	align-items: center;
+	flex-direction: row;
 }
 
 label {
@@ -23,24 +54,53 @@ label {
 
 main {
 	background-color: #191970;
-	width: 70vw;
-	height: 70vh;
+	width: 25vw;
+	height: 100vh;
 	display: flex;
 	flex-direction: column;
-	justify-content:space-around;
-	align-items:center;
+	justify-content: flex-start;
+	align-items: flex-start;
 	position: relative;
+	overflow-y: scroll;
+	overflow-x: hidden;
 }
 
-.partes {
-	background-color: #3f3f9d;
+input,
+select {
+	border-style: hidden;
+	padding: 5px;
+	border-radius: 5px;
+}
+
+label {
+	font-size: 1rem;
 }
 
 .linhas {
 	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+	align-content: flex-start;
+	flex-direction: column;
+	padding: 6px;
+	width: 95%;
 }
 
 .box {
 	display: flex;
 	flex-direction: column;
+	width: 100%;
+	padding: 2px;
+}
+
+button {
+	border-style: none;
+	padding: 10px;
+	border-radius: 10px;
+	width: 93%;
+	margin: 10px;
+	background-color: #3f3f9d;
+	color: white;
+	font-size: 1.625rem;
 }

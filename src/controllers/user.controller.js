@@ -5,7 +5,7 @@ const user = require("../models/User");
 const getAll = async (req, res) => {
 	try {
 		const dataList = await user.find();
-		return res.render("index", dataList);
+		return res.render("index", {dataList});
 	} catch (err) {
 		res.status(500).send({ error: err.message });
 	}
