@@ -174,7 +174,7 @@
       </form>
     </div>
     <header>
-      <button id="open-form-button" onclick="openForm()">
+      <button class="open-form-button" onclick="openForm()">
         +
       </button>
       <div class="nome">
@@ -182,7 +182,13 @@
       </div>
     </header>
     <main>
-      
+      <ul>
+        <% dataList.forEach((lojas) => { %> 
+          <li> 
+            <%= lojas.codInt %> 
+          </li>  
+        <% }) %>
+      </ul>
     </main>
     <script src="script.js"></script>
   </body>
