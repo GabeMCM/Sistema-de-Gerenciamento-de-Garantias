@@ -1,170 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<title>replit</title>
-		<link href="style.css" rel="stylesheet" type="text/css" />
-	</head>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>replit</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
 
-	<body>
-		<main>
-			<form action="/save" method="post">
-				<!-- ********************* PARTE UM ********************* -->
-				<section class="parte-um partes">
-					<!-- ----------------LINHA UM---------------- -->
-					<div class="linha-um linhas"> 
+  <body>
+    <div class="form-box">
+      <form action="/save" method="post">
+        <!-- ********************* PARTE UM ********************* -->
+        <section class="parte-um partes">
+          <!-- ----------------LINHA UM---------------- -->
+          <div class="linha-um linhas">
+            <div class="box">
+              <label for="lojas">Loja</label>
+              <select id="lojas" name="lojas">
+                <option value="Uberaupe - Uberaba Auto Peças LTDA.">
+                  Uberaupe - Uberaba Auto Peças LTDA.
+                </option>
+                <option value="Uberauto - Uberaba Acessórios.">
+                  Uberauto - Uberaba Acessórios.
+                </option>
+              </select>
+            </div>
 
-						<div class="box">
-							<label for="lojas">Loja</label>
-							<select id="lojas" name="lojas">
-								<option value="Uberaupe - Uberaba Auto Peças LTDA.">Uberaupe - Uberaba Auto Peças LTDA.</option>
-								<option value="Uberauto - Uberaba Acessórios.">Uberauto - Uberaba Acessórios.</option>
-							</select>
-						</div>
+            <div class="box">
+              <label for="data">Data</label>
+              <input name="data" id="data" type="date" />
+            </div>
 
-						<div class="box">
-							<label for="data">Data</label>
-							<input name="data" id="data" type="date" />
-						</div>
+            <div class="box">
+              <label for="responsavel">Responsável</label>
+              <select id="responsavel" name="responsavel">
+                <option value="Gisney">Gisney</option>
+                <option value="Gabriel">Gabriel</option>
+              </select>
+            </div>
+          </div>
+          <!-- ----------------LINHA DOIS---------------- -->
+          <div class="linha-dois linhas">
+            <div class="box">
+              <label for="codInt">Código Interno Produto</label>
+              <input name="codInt" id="codInt" type="number" />
+            </div>
 
-						<div class="box">
-							<label for="responsavel">Responsável</label>
-							<select id="responsavel" name="responsavel">
-								<option value="Gisney">Gisney</option>
-								<option value="Gabriel">Gabriel</option>
-							</select>
-						</div>
+            <div class="box">
+              <label for="produto">Produto</label>
+              <input name="produto" id="produto" type="text" />
+            </div>
 
-					</div>
-					<!-- ----------------LINHA DOIS---------------- -->
-					<div class="linha-dois linhas"> 
+            <div class="box">
+              <label for="codFornecedor">Codigo Fornecedor</label>
+              <input name="codFornecedor" id="codFornecedor" type="number" />
+            </div>
 
-						<div class="box">
-							<label for="codInt">Código Interno Produto</label>
-							<input  name="codInt" id="codInt" type="number" />
-						</div>
+            <div class="box">
+              <label for="fornecedor">Fornecedor</label>
+              <input name="fornecedor" id="fornecedor" type="text" />
+            </div>
+          </div>
+          <!-- ----------------LINHA TRES---------------- -->
+          <div class="linha-tres linhas">
+            <div class="box">
+              <label for="nfCompra">NF Compra</label>
+              <input name="nfCompra" id="nfCompra" type="number" />
+            </div>
 
-						<div class="box">
-							<label for="produto">Produto</label>
-							<input name="produto" id="produto" type="text" />
-						</div>
+            <div class="box">
+              <label for="emissaoNfCompra">Emissão</label>
+              <input name="emissaoNfCompra" id="emissaoNfCompra" type="date" />
+            </div>
 
-						<div class="box">
-							<label for="codFornecedor">Codigo Fornecedor</label>
-							<input name="codFornecedor" id="codFornecedor" type="number" />
-						</div>
+            <div class="box">
+              <label for="codigoProdutoFornecedor">Cod Produto na Nota</label>
+              <input
+                name="codigoProdutoFornecedor"
+                id="codigoProdutoFornecedor"
+                type="number"
+              />
+            </div>
 
-						<div class="box">
-							<label for="fornecedor">Fornecedor</label>
-							<input name="fornecedor" id="fornecedor" type="text" />
-						</div>
+            <div class="box">
+              <label for="quantidade">Quantidade</label>
+              <input name="quantidade" id="quantidade" type="number" />
+            </div>
 
-					</div>
-					<!-- ----------------LINHA TRES---------------- -->
-					<div class="linha-tres linhas"> 
+            <div class="box">
+              <label for="valorUniNota">Valor</label>
+              <input
+                name="valorUniNota"
+                id="valorUniNota"
+                type="number"
+                step="0.01"
+              />
+            </div>
+          </div>
+          <!-- ----------------LINHA QUATRO---------------- -->
+          <div class="linha-quatro linhas">
+            <div class="box">
+              <label for="descDefeito">Descrição do defeito</label>
+              <input name="descDefeito" id="descDefeito" type="text" />
+            </div>
 
-						<div class="box">
-							<label for="nfCompra">NF Compra</label>
-							<input name="nfCompra" id="nfCompra" type="number" />
-						</div>
+            <div class="box">
+              <label for="valorTotal">Valor Total</label>
+              <input
+                name="valorTotal"
+                id="valorTotal"
+                type="number"
+                step="0.01"
+              />
+            </div>
+          </div>
+        </section>
 
-						<div class="box">
-							<label for="emissaoNfCompra">Emissão</label>
-							<input name="emissaoNfCompra" id="emissaoNfCompra" type="date" />
-						</div>
+        <!-- ********************* PARTE DOIS ********************* -->
+        <section class="parte-dois partes">
+          <!-- ----------------LINHA CINCO---------------- -->
+          <div class="linha-cinco linhas">
+            <div class="box">
+              <label for="nfVenda">NF Venda</label>
+              <input name="nfVenda" id="nfVenda" type="number" />
+            </div>
 
-						<div class="box">
-							<label for="codigoProdutoFornecedor">Cod Produto na Nota</label>
-							<input name="codigoProdutoFornecedor" id="codigoProdutoFornecedor" type="number" />
-						</div>
+            <div class="box">
+              <label for="emissaoNfVenda">Emissão</label>
+              <input name="emissaoNfVenda" id="emissaoNfVenda" type="date" />
+            </div>
 
-						<div class="box">
-							<label for="quantidade">Quantidade</label>
-							<input name="quantidade" id="quantidade" type="number" />
-						</div>
+            <div class="box">
+              <label for="nomeCliente">Nome do Cliente</label>
+              <input name="nomeCliente" id="nomeCliente" type="text" />
+            </div>
+          </div>
+        </section>
 
-						<div class="box">
-							<label for="valorUniNota">Valor</label>
-							<input name="valorUniNota" id="valorUniNota" type="number" step="0.01"/>
-						</div>
+        <!-- ********************* PARTE TRES ********************* -->
+        <section class="parte-tres partes">
+          <!-- ----------------LINHA SEIS---------------- -->
+          <div class="linha-seis linhas">
+            <div class="box">
+              <label for="numOs">N° OS</label>
+              <input name="numOs" id="numOs" type="number" />
+            </div>
 
-					</div>
-					<!-- ----------------LINHA QUATRO---------------- -->
-					<div class="linha-quatro linhas">
+            <div class="box">
+              <label for="nfGarantia">NF Garantia</label>
+              <input name="nfGarantia" id="nfGarantia" type="number" />
+            </div>
 
-						<div class="box">
-							<label for="descDefeito">Descrição do defeito</label>
-							<input name="descDefeito" id="descDefeito" type="text"/>
-						</div>
-
-						<div class="box">
-							<label for="valorTotal">Valor Total</label>
-							<input name="valorTotal" id="valorTotal" type="number" step="0.01"/>
-						</div>
-
-					</div>
-				</section>
-
-				<!-- ********************* PARTE DOIS ********************* -->
-				<section class="parte-dois partes">
-					<!-- ----------------LINHA CINCO---------------- -->
-					<div class="linha-cinco linhas"> 
-
-						<div class="box">
-							<label for="nfVenda">NF Venda</label>
-							<input name="nfVenda" id="nfVenda" type="number" />
-						</div>
-
-						<div class="box">
-							<label for="emissaoNfVenda">Emissão</label>
-							<input name="emissaoNfVenda" id="emissaoNfVenda" type="date" />
-						</div>
-
-						<div class="box">
-							<label for="nomeCliente">Nome do Cliente</label>
-							<input name="nomeCliente" id="nomeCliente" type="text" />
-						</div>
-
-					</div>
-				</section>
-
-				<!-- ********************* PARTE TRES ********************* -->
-				<section class="parte-tres partes">
-					<!-- ----------------LINHA SEIS---------------- -->
-					<div class="linha-seis linhas"> 
-
-						<div class="box">
-							<label for="numOs">N° OS</label>
-							<input name="numOs" id="numOs" type="number" />
-						</div>
-
-						<div class="box">
-							<label for="nfGarantia">NF Garantia</label>
-							<input  name="nfGarantia"id="nfGarantia" type="number" />
-						</div>
-
-						<div class="box">
-							<label for="emissaoNfGarantia">Emissão</label>
-							<input  name="emissaoNfGarantia" id="emissaoNfGarantia" type="date" />
-						</div>
-
-					</div>
-					<!-- ----------------LINHA SETE---------------- -->
-					<div class="linha-sete linhas"> 
-
-						<div class="box">
-							<label for="observacao">Obs</label>
-							<input name="observacao" id="observacao" type="text" />
-						</div>
-
-					</div>
-				</section>
-				<!-- ********************* PARTE QUATRO ********************* -->
-				<!-- ----------------LINHA OITO---------------- -->
-				<button id="submit" type="submit">Adicionar</button>
-			</form>	
-		</main>
-		<script src="script.js"></script>
-	</body>
+            <div class="box">
+              <label for="emissaoNfGarantia">Emissão</label>
+              <input
+                name="emissaoNfGarantia"
+                id="emissaoNfGarantia"
+                type="date"
+              />
+            </div>
+          </div>
+          <!-- ----------------LINHA SETE---------------- -->
+          <div class="linha-sete linhas">
+            <div class="box">
+              <label for="observacao">Obs</label>
+              <input name="observacao" id="observacao" type="text" />
+            </div>
+          </div>
+        </section>
+        <!-- ********************* PARTE QUATRO ********************* -->
+        <!-- ----------------LINHA OITO---------------- -->
+        <button id="add-data" type="submit">Adicionar</button>
+      </form>
+    </div>
+    <header>
+      <button id="open-form-button" onclick="openForm()">
+        +
+      </button>
+      <div class="nome">
+        Garantias
+      </div>
+    </header>
+    <main>
+      
+    </main>
+    <script src="script.js"></script>
+  </body>
 </html>

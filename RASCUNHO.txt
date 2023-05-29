@@ -43,3 +43,17 @@
 	<option value="Uberaupe - Uberaba Auto Peças LTDA.">
 	<option value="Uberauto - Uberaba Acessórios.">
 </datalist>
+
+
+
+
+// Assim que aparece os dados do banco de dados {
+	<ul>
+        <% dataList.forEach((lojas) => { %> 
+          <li> 
+            <%= lojas.codInt %> 
+          </li>  
+        <% }) %>
+    </ul>
+}
+
