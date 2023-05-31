@@ -169,7 +169,8 @@ label {
 }
 
 #add-data,
-.open-form-button {
+.open-form-button,
+.edit-and-delete-button {
 	background-color: #3f3f9d;
 	padding: 10px;
 	color: white;
