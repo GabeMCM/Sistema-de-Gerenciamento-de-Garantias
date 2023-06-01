@@ -5,24 +5,24 @@ const user = require("../models/User");
 const getAll = async (req, res) => {
 	try {
 		const dataList = await user.find();
-		return res.render("index", { dataList });
+		return res.render("index", { dataList, item: null});
 	} catch (err) {
 		res.status(500).send({ error: err.message });
 	}
 };
 
 const getById = async (req, res) => {
-	const list = user.findOne({ _id: req.params.id });
-	const dataList = await user.find();
-	res.render("index", { list, dataList });
+	const item = user.findOne({ _id: req.params.id });
+	const dataList = await user.find(item);
+	res.render("index", { item, dataList });
 };
 
 ////Método de salvar os dados e mandar para o banco de dados
 const save = async (req, res) => {
-	const lojas = req.body;
+	const list = req.body;
 
 	try {
-		await user.create(lojas);
+		await user.create(list);
 		return res.redirect("/");
 	} catch (err) {
 		res.status(500).send({ error: err.message });
