@@ -9,7 +9,7 @@
 
 	<body>
 		<div class="form-box">
-			<% if (item == null) { %>
+			<% if (item === null) { %>
 			<form action="/save" method="post">
 				<!-- ********************* PARTE UM ********************* -->
 				<section class="parte-um partes">
@@ -17,14 +17,7 @@
 					<div class="linha-um linhas">
 						<div class="box">
 							<label for="lojas">Loja</label>
-							<select id="lojas" name="lojas">
-								<option value="Uberaupe - Uberaba Auto Peças LTDA.">
-									Uberaupe - Uberaba Auto Peças LTDA.
-								</option>
-								<option value="Uberauto - Uberaba Acessórios.">
-									Uberauto - Uberaba Acessórios.
-								</option>
-							</select>
+							<input name="lojas" id="lojas" type="text" />
 						</div>
 
 						<div class="box">
@@ -34,10 +27,7 @@
 
 						<div class="box">
 							<label for="responsavel">Responsável</label>
-							<select id="responsavel" name="responsavel">
-								<option value="Gisney">Gisney</option>
-								<option value="Gabriel">Gabriel</option>
-							</select>
+							<input name="responsavel" id="responsavel" type="text" />
 						</div>
 					</div>
 					<!-- ----------------LINHA DOIS---------------- -->
@@ -174,21 +164,19 @@
 				<button id="add-data" type="submit">Adicionar</button>
 			</form>
 			<% } else { %>
-			<form action="/" method="post">
+			<form action="/update/<%= item._id %>" method="post">
 				<!-- ********************* PARTE UM ********************* -->
 				<section class="parte-um partes">
 					<!-- ----------------LINHA UM---------------- -->
 					<div class="linha-um linhas">
 						<div class="box">
 							<label for="lojas">Loja</label>
-							<select id="lojas" name="lojas" value="<%= item.lojas %>">
-								<option value="Uberaupe - Uberaba Auto Peças LTDA.">
-									Uberaupe - Uberaba Auto Peças LTDA.
-								</option>
-								<option value="Uberauto - Uberaba Acessórios.">
-									Uberauto - Uberaba Acessórios.
-								</option>
-							</select>
+							<input
+								id="lojas"
+								name="lojas"
+								type="text"
+								value="<%= item.lojas %>"
+							/>
 						</div>
 
 						<div class="box">
@@ -203,14 +191,12 @@
 
 						<div class="box">
 							<label for="responsavel">Responsável</label>
-							<select
+							<input
 								id="responsavel"
 								name="responsavel"
+								type="text"
 								value="<%= item.responsavel %>"
-							>
-								<option value="Gisney">Gisney</option>
-								<option value="Gabriel">Gabriel</option>
-							</select>
+							/>
 						</div>
 					</div>
 					<!-- ----------------LINHA DOIS---------------- -->
@@ -385,12 +371,12 @@
 
 						<div class="box">
 							<label for="nfGarantia">NF Garantia</label>
-							<input 
-                name="nfGarantia" 
-                id="nfGarantia" 
-                type="number"
-                value="<%= item.nfGarantia %>"
-              />
+							<input
+								name="nfGarantia"
+								id="nfGarantia"
+								type="number"
+								value="<%= item.nfGarantia %>"
+							/>
 						</div>
 
 						<div class="box">
@@ -399,7 +385,7 @@
 								name="emissaoNfGarantia"
 								id="emissaoNfGarantia"
 								type="date"
-                value="<%= item.emissaoNfGarantia%>"
+								value="<%= item.emissaoNfGarantia%>"
 							/>
 						</div>
 					</div>
@@ -407,12 +393,12 @@
 					<div class="linha-sete linhas">
 						<div class="box">
 							<label for="observacao">Obs</label>
-							<input 
-                name="observacao" 
-                id="observacao" 
-                type="text" 
-                value="<%= item.observacao %>"
-              />
+							<input
+								name="observacao"
+								id="observacao"
+								type="text"
+								value="<%= item.observacao %>"
+							/>
 						</div>
 					</div>
 				</section>
@@ -432,7 +418,7 @@
 				<% dataList.forEach((list) => { %>
 				<li>
 					<%= list.codInt %>
-					<a class="edit-and-delete-button" href="/getById/<%= list._id %>">
+					<a class="edit-and-delete-button" href="/getById/<%= list._id %>/update">
 						<svg
 							id="edit-icon"
 							xmlns="http://www.w3.org/2000/svg"
@@ -451,7 +437,7 @@
 							/>
 						</svg>
 					</a>
-					<a class="edit-and-delete-button" href="http://">
+					<a class="edit-and-delete-button" href="/getById/<%= list._id %>/delete">
 						<svg
 							id="delete-icon"
 							xmlns="http://www.w3.org/2000/svg"
@@ -470,6 +456,18 @@
 				<% }) %>
 			</ul>
 		</main>
+		<% if (itemDel != null) { %>
+		<section id="modal">
+			<div id="card">
+				<a href="/">x</a>
+				<h2>Confirmação</h2>
+				<hr>
+				<p>Deseja mesmo apagar este item? <%= itemDel.codInt %></p>
+				<a href="/">Não</a>
+				<a href="/deleteItem/<%= itemDel._id %>">Sim</a>
+			</div>
+		</section>
+		<% } %>
 		<script src="script.js"></script>
 	</body>
 </html>

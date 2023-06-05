@@ -6,7 +6,7 @@ const UserSchema = new mongoose.Schema({
 		require: true,
 	},
 	data: {
-		type: Date,
+		type: String,
 		require: true,
 	},
 	responsavel: {
