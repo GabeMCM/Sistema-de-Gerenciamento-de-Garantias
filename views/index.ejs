@@ -174,7 +174,7 @@
 				<button id="add-data" type="submit">Adicionar</button>
 			</form>
 			<% } else { %>
-			<form action="/" method="post">
+			<form action="/update/<%= item._id %>" method="post">
 				<!-- ********************* PARTE UM ********************* -->
 				<section class="parte-um partes">
 					<!-- ----------------LINHA UM---------------- -->
@@ -262,7 +262,7 @@
 							<input
 								name="nfCompra"
 								id="nfCompra"
-								type="number"
+								type="text"
 								value="<%= item.nfCompra %>"
 							/>
 						</div>
@@ -388,7 +388,7 @@
 							<input 
                 name="nfGarantia" 
                 id="nfGarantia" 
-                type="number"
+                type="text"
                 value="<%= item.nfGarantia %>"
               />
 						</div>
@@ -451,7 +451,7 @@
 							/>
 						</svg>
 					</a>
-					<a class="edit-and-delete-button" href="http://">
+					<a class="edit-and-delete-button" href="">
 						<svg
 							id="delete-icon"
 							xmlns="http://www.w3.org/2000/svg"

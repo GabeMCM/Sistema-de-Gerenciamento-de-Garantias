@@ -5,16 +5,34 @@ const user = require("../models/User");
 const getAll = async (req, res) => {
 	try {
 		const dataList = await user.find();
-		return res.render("index", { dataList, item: null});
+		return res.render("index", { dataList, item: null, itemDel: null });
 	} catch (err) {
 		res.status(500).send({ error: err.message });
 	}
 };
 
 const getById = async (req, res) => {
-	const item = user.findOne({ _id: req.params.id });
-	const dataList = await user.find(item);
-	res.render("index", { item, dataList });
+	try {
+		const {item, itemDel} = await user.findOne({ _id: req.params.id });
+		const dataList = await user.find();
+		if (re.params.method == update){
+			res.render("index", { item, itemDel: null, dataList });
+		} else {
+			res.render("index", { item: null, itemDel, dataList });			
+		}
+	} catch (err) {
+		res.status(500).send({ error: err.message });
+	}
+};
+
+const updateData = async (req, res) => {
+	try {
+		const list = req.body;
+		await user.updateOne({ _id: req.params.id }, list);
+		res.redirect("/");
+	} catch (err) {
+		res.status(500).send({ error: err.message });
+	}
 };
 
 ////Método de salvar os dados e mandar para o banco de dados
@@ -34,4 +52,5 @@ module.exports = {
 	save,
 	getAll,
 	getById,
+	updateData,
 };

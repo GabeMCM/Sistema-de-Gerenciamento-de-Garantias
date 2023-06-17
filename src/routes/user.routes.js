@@ -3,6 +3,7 @@ const userController = require("../controllers/user.controller");
 
 route.get("/", userController.getAll);
 route.post("/save", userController.save);
-route.get("/getById/:id", userController.getById);
+route.get("/getById/:id/:method", userController.getById);
+route.post("/update/:id", userController.updateData);
 
 module.exports = route;
