@@ -4,7 +4,6 @@ const user = require("../models/User");
 ////Método de salvar os dados e mandar para o banco de dados
 const save = async (req, res) => {
 	const list = req.body;
-
 	try {
 		await user.create(list);
 		return res.redirect("/");
@@ -27,14 +26,13 @@ const getAll = async (req, res) => {
 const getById = async (req, res) => {
 	try {
 		const dataList = await user.find();
-		if(req.params.method == "update") {
+		if (req.params.method == "update") {
 			const item = await user.findOne({ _id: req.params.id });
 			res.render("index", { item, dataList, itemDel: null });
 		} else {
 			const itemDel = await user.findOne({ _id: req.params.id });
 			res.render("index", { item: null, dataList, itemDel });
 		}
-		
 	} catch (err) {
 		res.status(500).send({ error: err.message });
 	}
@@ -51,10 +49,20 @@ const updateItem = async (req, res) => {
 	}
 };
 
+const delItem = async (req, res) => {
+	try {
+		await user.deleteOne({ _id: req.params.id });
+		res.redirect("/");
+	} catch (err) {
+		res.status(500).send({ error: err.message });
+	}
+};
+
 //EXPORTA OS MÉTODOS
 module.exports = {
 	save,
 	getAll,
 	getById,
 	updateItem,
+	delItem,
 };

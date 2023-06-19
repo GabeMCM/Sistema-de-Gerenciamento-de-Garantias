@@ -33,8 +33,17 @@
 					<!-- ----------------LINHA DOIS---------------- -->
 					<div class="linha-dois linhas">
 						<div class="box">
-							<label for="codInt">Código Interno Produto</label>
+							<label for="codInt">Código Produto - LOJA</label>
 							<input name="codInt" id="codInt" type="number" />
+						</div>
+
+						<div class="box">
+							<label for="codigoProdutoFornecedor">Código Produto - MARCA</label>
+							<input
+								name="codigoProdutoFornecedor"
+								id="codigoProdutoFornecedor"
+								type="text"
+							/>
 						</div>
 
 						<div class="box">
@@ -62,15 +71,6 @@
 						<div class="box">
 							<label for="emissaoNfCompra">Emissão</label>
 							<input name="emissaoNfCompra" id="emissaoNfCompra" type="date" />
-						</div>
-
-						<div class="box">
-							<label for="codigoProdutoFornecedor">Cod Produto na Nota</label>
-							<input
-								name="codigoProdutoFornecedor"
-								id="codigoProdutoFornecedor"
-								type="number"
-							/>
 						</div>
 
 						<div class="box">
@@ -202,12 +202,22 @@
 					<!-- ----------------LINHA DOIS---------------- -->
 					<div class="linha-dois linhas">
 						<div class="box">
-							<label for="codInt">Código Interno Produto</label>
+							<label for="codInt">Código Produto - LOJA</label>
 							<input
 								name="codInt"
 								id="codInt"
 								type="number"
 								value="<%= item.codInt %>"
+							/>
+						</div>
+
+						<div class="box">
+							<label for="codigoProdutoFornecedor">Código Produto - MARCA</label>
+							<input
+								name="codigoProdutoFornecedor"
+								id="codigoProdutoFornecedor"
+								type="text"
+								value="<%= item.codigoProdutoFornecedor %>"
 							/>
 						</div>
 
@@ -260,16 +270,6 @@
 								id="emissaoNfCompra"
 								type="date"
 								value="<%= item.emissaoNfCompra%>"
-							/>
-						</div>
-
-						<div class="box">
-							<label for="codigoProdutoFornecedor">Cod Produto na Nota</label>
-							<input
-								name="codigoProdutoFornecedor"
-								id="codigoProdutoFornecedor"
-								type="number"
-								value="<%= item.codigoProdutoFornecedor %>"
 							/>
 						</div>
 
@@ -371,12 +371,12 @@
 
 						<div class="box">
 							<label for="nfGarantia">NF Garantia</label>
-							<input 
-                name="nfGarantia" 
-                id="nfGarantia" 
-                type="number"
-                value="<%= item.nfGarantia %>"
-              />
+							<input
+								name="nfGarantia"
+								id="nfGarantia"
+								type="number"
+								value="<%= item.nfGarantia %>"
+							/>
 						</div>
 
 						<div class="box">
@@ -418,7 +418,10 @@
 				<% dataList.forEach((list) => { %>
 				<li>
 					<%= list.codInt %>
-					<a class="edit-and-delete-button" href="/getById/<%= list._id %>/update">
+					<a
+						class="edit-and-delete-button"
+						href="/getById/<%= list._id %>/update"
+					>
 						<svg
 							id="edit-icon"
 							xmlns="http://www.w3.org/2000/svg"
@@ -437,7 +440,10 @@
 							/>
 						</svg>
 					</a>
-					<a class="edit-and-delete-button" href="http://">
+					<a
+						class="edit-and-delete-button"
+						href="/getById/<%= list._id %>/delete"
+					>
 						<svg
 							id="delete-icon"
 							xmlns="http://www.w3.org/2000/svg"
@@ -461,10 +467,10 @@
 			<div id="card">
 				<a href="/">x</a>
 				<h2>Confirmação</h2>
-				<hr>
+				<hr />
 				<p>Deseja mesmo apagar este item? <%= itemDel.codInt %></p>
 				<a href="/">Não</a>
-				<a href="/deleteItem/<%= itemDel._id %>">Sim</a>
+				<a href="/delete/<%= itemDel._id %>">Sim</a>
 			</div>
 		</section>
 		<% } %>

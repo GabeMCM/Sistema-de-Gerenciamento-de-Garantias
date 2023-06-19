@@ -38,7 +38,7 @@ const UserSchema = new mongoose.Schema({
 		require: true,
 	},
 	codigoProdutoFornecedor: {
-		type: Number,
+		type: String,
 		require: true,
 	},
 	quantidade: {
