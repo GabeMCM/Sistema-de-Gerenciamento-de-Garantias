@@ -6,20 +6,24 @@ const connectDatabse = require("./src/database/db");
 const app = express();
 const port = 3000;
 
+
+/*INFORMANDO QUE O MECANISMO DE VISUALIZAÇÃO(A ENGINE USADA) 
+SERÁ O EJS (PODE USAR HANDLEBARS, PUG, ETC...) 
+E CONFIGURANDO A PASTA DE VISUALIZAÇÃO CORRETA.*/
+app.set("view engine", "ejs");
+app.set('views', path.join(__dirname, 'views'));
+
+//USA OS ARQUIVOS DA PASTAS PUBLIC
+app.use(express.static(path.join(__dirname, "public")));
+
 //INFORMA AO EXPRESS QUE VOU USAR JSON
 app.use(express.json());
 
 //CONECTANDO COM DATABASE
 connectDatabse();
 
-//INFORMA QUE A ENGINE USADE É A EJS(PODE USAR HANDLEBARS, PUG, ETC...)
-app.set("view engine", "ejs");
-
 //
 app.use(express.urlencoded());
-
-//USA OS ARQUIVOS DA PASTAS PUBLIC
-app.use(express.static(path.join(__dirname, "public")));
 
 //USA AS ROTAS
 app.use("/", userRoute);

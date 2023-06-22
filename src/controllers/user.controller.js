@@ -28,10 +28,10 @@ const getById = async (req, res) => {
 		const dataList = await user.find();
 		if (req.params.method == "update") {
 			const item = await user.findOne({ _id: req.params.id });
-			res.render("index", { item, dataList, itemDel: null });
+			return res.render("index", { item, dataList, itemDel: null });
 		} else {
 			const itemDel = await user.findOne({ _id: req.params.id });
-			res.render("index", { item: null, dataList, itemDel });
+			return res.render("index", { item: null, dataList, itemDel });
 		}
 	} catch (err) {
 		res.status(500).send({ error: err.message });

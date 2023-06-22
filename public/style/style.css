@@ -66,10 +66,6 @@ button {
 	flex-direction: row;
 }
 
-#codigo {
-	/* width: 127px; */
-}
-
 .desc {
 	font-size: 1rem;
 	font-weight: 700;
@@ -139,6 +135,12 @@ main {
 	font-size: 2rem;
 	position: absolute;
 	left: calc((100vw / 5) * 2.25);
+}
+
+.nome a{
+	list-style: none;
+	color: white;
+	text-decoration: none;
 }
 
 section {
@@ -313,39 +315,4 @@ header {
 .header-with-form-open {
 	width: 80vw;
 	transition: 1.05s;
-}
-
-.dropdown {
-	position: relative;
-	display: inline-block;
-}
-
-.dropdown-input {
-	padding: 8px;
-	border: 1px solid #ccc;
-	cursor: pointer;
-}
-
-.dropdown-list {
-	position: absolute;
-	top: 100%;
-	left: 0;
-	width: 100%;
-	max-height: 500px;
-	overflow-y: auto;
-	border: 1px solid #ccc;
-	background-color: #fff;
-	list-style-type: none;
-	padding: 0;
-	margin: 0;
-	display: none;
-}
-
-.dropdown-item {
-	padding: 8px;
-	cursor: pointer;
-}
-
-.dropdown-item:hover {
-	background-color: #f0f0f0;
 }
