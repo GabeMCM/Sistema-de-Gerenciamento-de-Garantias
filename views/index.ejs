@@ -94,16 +94,6 @@
 								<label for="descDefeito">Descrição do defeito</label>
 								<input name="descDefeito" id="descDefeito" type="text" />
 							</div>
-
-							<div class="box">
-								<label for="valorTotal">Valor Total</label>
-								<input
-									name="valorTotal"
-									id="valorTotal"
-									type="number"
-									step="0.01"
-								/>
-							</div>
 						</div>
 					</section>
 
@@ -307,17 +297,6 @@
 									value="<%= item.descDefeito %>"
 								/>
 							</div>
-
-							<div class="box">
-								<label for="valorTotal">Valor Total</label>
-								<input
-									name="valorTotal"
-									id="valorTotal"
-									type="number"
-									step="0.01"
-									value="<%= item.valorTotal %>"
-								/>
-							</div>
 						</div>
 					</section>
 
@@ -480,8 +459,88 @@
 							</a>
 						</div>
 					</div>
-					<div class="showData" id="">
-						<button id="showData">+</button>
+					<div class="showData">
+						<button class="buttonShowData">+</button>
+					</div>
+					<div id="hiddenInformation">
+
+						<div class="itemData">
+							<p class="desc">Loja:</p>
+							<input disabled type="text" class="inputData" value="<%= list.lojas %>">
+						</div>
+						<div class="itemData">
+							<p class="desc">Data:</p>
+							<input disabled type="text" class="inputData" value="<%= list.data %>">
+						</div>
+						<div class="itemData">
+							<p class="desc">Responsável:</p>
+							<input disabled type="text" class="inputData" value="<%= list.responsavel %>">
+						</div>
+						<div class="itemData">
+							<p class="desc">Código Produto - MARCA:</p>
+							<input disabled type="text" class="inputData" value="<%= list.codigoProdutoFornecedor %>">
+						</div>
+						<div class="itemData">
+							<p class="desc">Código Fornecedor:</p>
+							<input disabled type="text" class="inputData" value="<%= list.codFornecedor %>">
+						</div>
+						<div class="itemData">
+							<p class="desc">Fornecedor:</p>
+							<input disabled type="text" class="inputData" value="<%= list.fornecedor %>">
+						</div>
+						<div class="itemData">
+							<p class="desc">NF Compra:</p>
+							<input disabled type="text" class="inputData" value="<%= list.nfCompra %>">
+						</div>
+						<div class="itemData">
+							<p class="desc">Data de Emissão:</p>
+							<input disabled type="text" class="inputData" value="<%= list.emissaoNfCompra %>">
+						</div>
+						<div class="itemData">
+							<p class="desc">Quantidade:</p>
+							<input disabled type="text" class="inputData" value="<%= list.quantidade %>">
+						</div>
+						<div class="itemData">
+							<p class="desc">Valor Unitário na NF:</p>
+							<input disabled type="text" class="inputData" value="<%= list.valorUniNota %>">
+						</div>
+						<div class="itemData">
+							<p class="desc">Valor Total:</p>
+							<input disabled type="text" class="inputData" value="<%= list.quantidade*list.valorUniNota %>">
+						</div>
+						<div class="itemData">
+							<p class="desc">Defeito:</p>
+							<input disabled type="text" class="inputData" value="<%= list.descDefeito %>">
+						</div>
+						
+
+						<div class="itemData">
+							<p class="desc">NF/OS de Venda:</p>
+							<input disabled type="text" class="inputData" value="<%= list.nfVenda %>">
+						</div>
+						<div class="itemData">
+							<p class="desc">Data de Emissão:</p>
+							<input disabled type="text" class="inputData" value="<%= list.emissaoNfVenda %>">
+						</div>
+						<div class="itemData">
+							<p class="desc">Nome do Cliente:</p>
+							<input disabled type="text" class="inputData" value="<%= list.nomeCliente %>">
+						</div>
+						
+
+						<div class="itemData">
+							<p class="desc">NF de Garantia:</p>
+							<input disabled type="text" class="inputData" value="<%= list.nfGarantia %>">
+						</div>
+						<div class="itemData">
+							<p class="desc">Data de emissão:</p>
+							<input disabled type="text" class="inputData" value="<%= list.emissaoNfGarantia %>">
+						</div>
+						<div class="itemData">
+							<p class="desc">Observações:</p>
+							<input disabled type="text" class="inputData" value="<%= list.observacao %>">
+						</div>
+						
 					</div>
 				</li>
 				<% }) %>
@@ -490,12 +549,20 @@
 		<% if (itemDel != null) { %>
 		<section id="modal">
 			<div id="card">
-				<a href="/">x</a>
+				<div id="fechar">
+					<a href="/">x</a>
+				</div>
 				<h2>Confirmação</h2>
 				<hr/>
-				<p>Deseja mesmo apagar este item? <%= itemDel.codInt %></p>
-				<a href="/">Não</a>
-				<a href="/delete/<%= itemDel._id %>">Sim</a>
+				<div id="confirm">
+					<p>Deseja mesmo apagar este item? <%= itemDel.codInt %></p>
+				</div>
+				<div id="btnNot">				
+					<a href="/">Não</a>
+				</div>
+				<div id="btnYes">
+					<a href="/delete/<%= itemDel._id %>">Sim</a>
+				</div>
 			</div>
 		</section>
 		<% } %>

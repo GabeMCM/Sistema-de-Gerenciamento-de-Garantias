@@ -5,57 +5,56 @@
 }
 
 button {
-    /* background-color: #191970; */
-    color: white;
-    font-size: 1.5rem;
-    /* width: 40px; */
-    /* height: 40px; */
-    border-radius: 50px;
-    border: transparent;
-    /* text-align: center; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
+	/* background-color: #191970; */
+	color: white;
+	font-size: 1.5rem;
+	/* width: 40px; */
+	/* height: 40px; */
+	border-radius: 50px;
+	border: transparent;
+	/* text-align: center; */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
 }
 
-#showData {
-    background-color: #191970;
-    width: 40px;
-    height: 40px;
-    font-weight: 900;
-    margin-right: 5px;
+.buttonShowData {
+	background-color: #191970;
+	width: 45%;
+	height: 100%;
+	margin-right: 5px;
 }
 
-#showData:hover {
-    border-color: white;
-    border: 1px;
-    border-style: solid;
+.buttonShowData:hover {
+	border-color: white;
+	border: 1px;
+	border-style: solid;
 }
 
 .showData {
-    width: 5%;
-    /* background-color: #191970; */
-    height: 100%;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+	width: 5%;
+	/* background-color: #191970; */
+	height: 100%;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
 }
 
 .buttonData {
-    padding: 2px;
+	padding: 2px;
 }
 
 #edit {
-    margin-right: 5px;
+	margin-right: 5px;
 }
 
 .buttons {
-    display: flex;
-    align-items: center;
-    width: 10%;
-    justify-content: flex-end;
-    /* background-color: tomato; */
+	display: flex;
+	align-items: center;
+	width: 10%;
+	justify-content: flex-end;
+	/* background-color: tomato; */
 }
 
 .itemData {
@@ -97,9 +96,9 @@ button {
 li {
 	background-color: #3f3f9d;
 	border-radius: 5px;
-	margin: 5px;
+	margin: 1px;
 	font-size: 1.25rem;
-	height: 3rem;
+	height: 5%;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -116,6 +115,7 @@ ul {
 	display: flex;
 	flex-direction: column;
 	overflow-y: scroll;
+	gap: 5px;
 }
 
 main {
@@ -137,7 +137,7 @@ main {
 	left: calc((100vw / 5) * 2.25);
 }
 
-.nome a{
+.nome a {
 	list-style: none;
 	color: white;
 	text-decoration: none;
@@ -267,8 +267,7 @@ label {
 }
 
 #add-data,
-.open-form-button,
-.edit-and-delete-button {
+.open-form-button {
 	background-color: #3f3f9d;
 	padding: 10px;
 	color: white;
@@ -299,6 +298,19 @@ label {
 	background-color: #191970;
 }
 
+.edit-and-delete-button {
+	padding: 20%;
+
+	margin-left: 15px;
+
+	color: white;
+}
+
+.edit-and-delete-button:hover {
+	/* border: solid 1px white; */
+	background-color: #3f51b5;
+}
+
 header {
 	width: 100vw;
 	display: flex;
@@ -315,4 +327,125 @@ header {
 .header-with-form-open {
 	width: 80vw;
 	transition: 1.05s;
+}
+
+#modal {
+	position: absolute;
+	z-index: 50;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(0, 0, 0, 0.7);
+}
+
+#card {
+	width: 30%;
+	height: 40%;
+	background-color: #33373b;
+	position: relative;
+}
+
+#confirm {
+	/* background-color: yellowgreen; */
+	height: 47%;
+}
+
+#confirm p {
+	font-size: 1.5rem;
+	padding: 3%;
+	padding-top: 5%;
+	color: white;
+}
+
+#fechar {
+	position: absolute;
+	width: 10%;
+	height: 15%;
+	right: 0px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.75rem;
+	border: solid 3px red;
+}
+
+#card h2 {
+	/* background-color: yellowgreen; */
+	width: 89%;
+	height: 17%;
+	display: flex;
+	align-items: center;
+	padding-left: 2%;
+	color: white;
+	font-size: 1.7rem;
+}
+
+#btnNot a,
+#btnYes a {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	bottom: 10%;
+	width: 20%;
+	height: 15%;
+}
+
+#btnYes a {
+	right: 15%;
+	border: solid 3px #4caf50;
+	text-decoration: none;
+	color: #4caf50;
+}
+
+#btnNot a {
+	left: 15%;
+	border: solid 3px red;
+}
+
+#fechar a {
+	padding: 10% 40%;
+}
+
+#fechar a,
+#btnNot a {
+	text-decoration: none;
+	color: red;
+}
+
+#fechar a:hover,
+#btnNot a:hover {
+	background-color: red;
+	color: white;
+}
+
+#btnYes a:hover {
+	background-color: #4caf50;
+	color: white;
+}
+
+#hiddenInformation {
+	display: none;
+}
+
+.displayInformation {
+	display: block !important; 
+	display: flex !important;
+	flex-direction: row !important;
+	flex-wrap: wrap !important;
+}
+
+.openLi{
+	transition: 0.5s;
+	height: 20%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.resizeButton{
+	height: 21% !important;
+	width: 4%;
 }
