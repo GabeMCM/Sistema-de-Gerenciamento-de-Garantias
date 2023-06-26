@@ -1,6 +1,11 @@
 const mongoose = require("mongoose");
 
 const UserSchema = new mongoose.Schema({
+	status: {
+		type: String,
+		require: true,
+		default: "init",
+	},
 	lojas: {
 		type: String,
 		require: true,

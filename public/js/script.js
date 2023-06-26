@@ -1,15 +1,23 @@
 const buttonShowData = document.querySelectorAll(".buttonShowData");
+const selects = document.querySelectorAll("#status");
+const li = document.querySelector("li");
+const info = li.querySelector("#hiddenInformation");
 
 buttonShowData.forEach((button) => {
-	console.log(button);
 	button.addEventListener("click", () => {
-		const divPai = button.parentElement;
-		const li = divPai.parentElement;
-		const info = li.querySelector("#hiddenInformation");
+		const showDataDiv = button.parentElement;
+		const principalInfoDiv = showDataDiv.parentElement;
 		li.classList.toggle("openLi");
 		info.classList.toggle("displayInformation");
-		divPai.classList.toggle("resizeButton")
+		principalInfoDiv.classList.toggle("open");
 	});
+});
+
+selects.forEach((select) => {
+	const value = select.value;
+	if (value == "positive") {
+		console.log(value);
+	}
 });
 
 const openForm = () => {
