@@ -4,7 +4,7 @@ const UserSchema = new mongoose.Schema({
 	status: {
 		type: String,
 		require: true,
-		default: "init",
+		default: "Aberto",
 	},
 	lojas: {
 		type: String,
@@ -86,6 +86,12 @@ const UserSchema = new mongoose.Schema({
 		type: String,
 		require: true,
 	},
+
+	dataDaColeta: {
+		type: String,
+		require: true,
+	},
+
 	check: {
 		type: Boolean,
 		require: true,

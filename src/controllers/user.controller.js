@@ -16,7 +16,12 @@ const save = async (req, res) => {
 const getAll = async (req, res) => {
 	try {
 		const dataList = await user.find();
-		return res.render("index", { dataList, item: null, itemDel: null });
+		return res.render("index", {
+			dataList,
+			item: null,
+			itemDel: null,
+			statusItem: null,
+		});
 	} catch (err) {
 		res.status(500).send({ error: err.message });
 	}
@@ -26,12 +31,23 @@ const getAll = async (req, res) => {
 const getById = async (req, res) => {
 	try {
 		const dataList = await user.find();
+		const statusItem = await user.find({ status: req.params.status });
 		if (req.params.method == "update") {
 			const item = await user.findOne({ _id: req.params.id });
-			return res.render("index", { item, dataList, itemDel: null });
+			return res.render("index", {
+				item,
+				dataList: null,
+				itemDel: null,
+				statusItem,
+			});
 		} else {
 			const itemDel = await user.findOne({ _id: req.params.id });
-			return res.render("index", { item: null, dataList, itemDel });
+			return res.render("index", {
+				item: null,
+				dataList: null,
+				itemDel,
+				statusItem,
+			});
 		}
 	} catch (err) {
 		res.status(500).send({ error: err.message });
@@ -43,7 +59,7 @@ const updateItem = async (req, res) => {
 	try {
 		const list = req.body;
 		await user.updateOne({ _id: req.params.id }, list);
-		res.redirect("/");
+		res.redirect("/show/Aberto");
 	} catch (err) {
 		res.status(500).send({ error: err.message });
 	}
@@ -52,7 +68,21 @@ const updateItem = async (req, res) => {
 const delItem = async (req, res) => {
 	try {
 		await user.deleteOne({ _id: req.params.id });
-		res.redirect("/");
+		res.redirect("/show/Aberto");
+	} catch (err) {
+		res.status(500).send({ error: err.message });
+	}
+};
+
+const showInfo = async (req, res) => {
+	try {
+		const statusItem = await user.find({ status: req.params.status });
+		return res.render("index", {
+			item: null,
+			dataList: null,
+			statusItem,
+			itemDel: null,
+		});
 	} catch (err) {
 		res.status(500).send({ error: err.message });
 	}
@@ -65,4 +95,5 @@ module.exports = {
 	getById,
 	updateItem,
 	delItem,
+	showInfo,
 };

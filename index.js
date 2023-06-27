@@ -30,5 +30,5 @@ app.use("/", userRoute);
 
 //INICIA EM LOCALHOST UM SERVIDOR QUE RODA O PROGRAMA
 app.listen(port, () =>
-	console.log(`Servidor rodando em http://localhost:${port}`)
+	console.log(`Servidor rodando em http://localhost:${port}/show/Aberto`)
 );

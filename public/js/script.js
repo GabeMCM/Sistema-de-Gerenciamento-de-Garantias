@@ -1,22 +1,37 @@
 const buttonShowData = document.querySelectorAll(".buttonShowData");
-const selects = document.querySelectorAll("#status");
-const li = document.querySelector("li");
-const info = li.querySelector("#hiddenInformation");
+const inputStatus = document.querySelectorAll(".status");
+const li = document.querySelectorAll("li");
 
 buttonShowData.forEach((button) => {
 	button.addEventListener("click", () => {
 		const showDataDiv = button.parentElement;
 		const principalInfoDiv = showDataDiv.parentElement;
-		li.classList.toggle("openLi");
+		const liTag = principalInfoDiv.parentElement;
+		const info = liTag.querySelector(".hiddenInformation");
+		liTag.classList.toggle("openLi");
 		info.classList.toggle("displayInformation");
 		principalInfoDiv.classList.toggle("open");
 	});
 });
 
-selects.forEach((select) => {
-	const value = select.value;
-	if (value == "positive") {
-		console.log(value);
+inputStatus.forEach((input) => {
+	const value = input.value;
+	const itemData = input.parentElement;
+	const select = itemData.parentElement;
+	const principalInfoDiv = select.parentElement;
+	const liTag = principalInfoDiv.parentElement;
+	if (value === "Finalizado") {
+		liTag.style.backgroundColor = "darkgreen";
+		return;
+	} else if (value === "Recusado") {
+		liTag.style.backgroundColor = "darkRed";
+		return;
+	} else if (value === "Enviado") {
+		liTag.style.backgroundColor = "grey";
+		return;
+	} else {
+		liTag.style.backgroundColor = "#3f3f9d";
+		return;
 	}
 });
 
@@ -27,7 +42,7 @@ const openForm = () => {
 
 	setTimeout(() => {
 		button.classList.toggle("rotate");
-	}, 200);
+	}, 0);
 	form.classList.toggle("openForm");
 	header.classList.toggle("header-with-form-open");
 };
