@@ -6,7 +6,6 @@ const connectDatabse = require("./src/database/db");
 const app = express();
 const port = 3000;
 
-
 /*INFORMANDO QUE O MECANISMO DE VISUALIZAÇÃO(A ENGINE USADA) 
 SERÁ O EJS (PODE USAR HANDLEBARS, PUG, ETC...) 
 E CONFIGURANDO A PASTA DE VISUALIZAÇÃO CORRETA.*/
@@ -30,5 +29,5 @@ app.use("/", userRoute);
 
 //INICIA EM LOCALHOST UM SERVIDOR QUE RODA O PROGRAMA
 app.listen(port, () =>
-	console.log(`Servidor rodando em http://localhost:${port}/show/Aberto`)
+	console.log(`Servidor rodando em http://localhost:${port}/All`)
 );

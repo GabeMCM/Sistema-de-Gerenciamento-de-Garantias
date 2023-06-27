@@ -421,12 +421,12 @@
 		<% if (item === null) { %>
 			<header>
 				<button class="open-form-button" onclick="openForm()">+</button>
-				<div class="nome"><a href="/">Garantias</a></div>
+				<div class="nome"><a href="/All">Garantias</a></div>
 			</header>
 		<% } else { %>
 			<header class="header-with-form-open" style="background-color: rgb(125, 0, 0)">
 				<button class="open-form-button rotate" onclick="openForm()">+</button>
-				<div class="nome"><a href="/">Garantias</a></div>
+				<div class="nome"><a href="/All">Garantias</a></div>
 			</header>
 		<% } %>
 
@@ -480,7 +480,7 @@
 									<div class="buttonData" id="edit">
 										<a
 											class="edit-and-delete-button"
-											href="/getById/<%= list._id %>/update"
+											href="/<%= list.status %>/getById/<%= list._id %>/update"
 										>
 											<svg
 												id="edit-icon"
@@ -504,7 +504,7 @@
 									<div class="buttonData" id="remove">
 										<a
 											class="edit-and-delete-button"
-											href="/getById/<%= list._id %>/delete"
+											href="/<%= list.status %>/getById/<%= list._id %>/delete"
 										>
 											<svg
 												id="delete-icon"
@@ -761,7 +761,7 @@
 									<div class="buttonData" id="edit">
 										<a
 											class="edit-and-delete-button"
-											href="/show/<%= list.status %>/getById/<%= list._id %>/update"
+											href="/<%= list.status %>/getById/<%= list._id %>/update"
 										>
 											<svg
 												id="edit-icon"
@@ -785,7 +785,7 @@
 									<div class="buttonData" id="remove">
 										<a
 											class="edit-and-delete-button"
-											href="/show/<%= list.status %>/getById/<%= list._id %>/delete"
+											href="/<%= list.status %>/getById/<%= list._id %>/delete"
 										>
 											<svg
 												id="delete-icon"
@@ -1001,16 +1001,16 @@
 		<nav>
 			<div class="options">
 				<button class="Aberto">
-					<a href="/show/Aberto">Aberto</a>
+					<a href="/Aberto">Aberto</a>
 				</button>
 				<button class="Enviado">
-					<a href="/show/Enviado">Enviado</a>
+					<a href="/Enviado">Enviado</a>
 				</button>
 				<button class="Finalizado">
-					<a href="/show/Finalizado">Finalizado</a>
+					<a href="/Finalizado">Finalizado</a>
 				</button>
 				<button class="Recusado">
-					<a href="/show/Recusado">Recusado</a>
+					<a href="/Recusado">Recusado</a>
 				</button>
 			</div>
 		</nav>

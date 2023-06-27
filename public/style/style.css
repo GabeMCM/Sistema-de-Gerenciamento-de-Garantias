@@ -471,10 +471,6 @@ header {
 	padding-top: 1%;
 }
 
-.displayInformation .itemData p,
-.displayInformation .itemData input {
-}
-
 .displayInformation .itemData p {
 	width: 31%;
 }

@@ -6,7 +6,7 @@ const save = async (req, res) => {
 	const list = req.body;
 	try {
 		await user.create(list);
-		return res.redirect("/");
+		return res.redirect("/All");
 	} catch (err) {
 		res.status(500).send({ error: err.message });
 	}
@@ -15,13 +15,23 @@ const save = async (req, res) => {
 ////Método de buscar todos os dados
 const getAll = async (req, res) => {
 	try {
-		const dataList = await user.find();
-		return res.render("index", {
-			dataList,
-			item: null,
-			itemDel: null,
-			statusItem: null,
-		});
+		if (req.params.status === "All") {
+			const dataList = await user.find();
+			return res.render("index", {
+				dataList,
+				item: null,
+				itemDel: null,
+				statusItem: null,
+			});
+		} else {
+			const statusItem = await user.find({ status: req.params.status });
+			return res.render("index", {
+				item: null,
+				dataList: null,
+				statusItem,
+				itemDel: null,
+			});
+		}
 	} catch (err) {
 		res.status(500).send({ error: err.message });
 	}
@@ -59,7 +69,7 @@ const updateItem = async (req, res) => {
 	try {
 		const list = req.body;
 		await user.updateOne({ _id: req.params.id }, list);
-		res.redirect("/show/Aberto");
+		res.redirect("/All");
 	} catch (err) {
 		res.status(500).send({ error: err.message });
 	}
@@ -68,12 +78,13 @@ const updateItem = async (req, res) => {
 const delItem = async (req, res) => {
 	try {
 		await user.deleteOne({ _id: req.params.id });
-		res.redirect("/show/Aberto");
+		res.redirect("/All");
 	} catch (err) {
 		res.status(500).send({ error: err.message });
 	}
 };
 
+/*
 const showInfo = async (req, res) => {
 	try {
 		const statusItem = await user.find({ status: req.params.status });
@@ -87,6 +98,7 @@ const showInfo = async (req, res) => {
 		res.status(500).send({ error: err.message });
 	}
 };
+*/
 
 //EXPORTA OS MÉTODOS
 module.exports = {
@@ -95,5 +107,4 @@ module.exports = {
 	getById,
 	updateItem,
 	delItem,
-	showInfo,
 };
