@@ -64,6 +64,22 @@ const getById = async (req, res) => {
 	}
 };
 
+////Método de filtrar dados
+const filterData = async (req, res) => {
+	try {
+		const fornecedor = req.body.Fornecedor;
+		const codigo = req.body.Codigo;
+		const descricao = req.body.Descricao;
+		const filterByCodigo = await user.find({ codInt: codigo });
+		const filterByProduto = await user.find({ produto: descricao });
+		const filterByFornecedor = await user.find({ fornecedor: fornecedor });
+		console.log({ filterByCodigo, filterByProduto, filterByFornecedor });
+		res.redirect("/All");
+	} catch (err) {
+		res.status(500).send({ error: err.message });
+	}
+};
+
 ////Método para dar update nos dados
 const updateItem = async (req, res) => {
 	try {
@@ -75,6 +91,7 @@ const updateItem = async (req, res) => {
 	}
 };
 
+////Método para excluir dados
 const delItem = async (req, res) => {
 	try {
 		await user.deleteOne({ _id: req.params.id });
@@ -84,22 +101,6 @@ const delItem = async (req, res) => {
 	}
 };
 
-/*
-const showInfo = async (req, res) => {
-	try {
-		const statusItem = await user.find({ status: req.params.status });
-		return res.render("index", {
-			item: null,
-			dataList: null,
-			statusItem,
-			itemDel: null,
-		});
-	} catch (err) {
-		res.status(500).send({ error: err.message });
-	}
-};
-*/
-
 //EXPORTA OS MÉTODOS
 module.exports = {
 	save,
@@ -107,4 +108,5 @@ module.exports = {
 	getById,
 	updateItem,
 	delItem,
+	filterData,
 };

@@ -1014,9 +1014,12 @@
 				</button>
 			</div>
 			<div class="filters">
-				<input class="search" type="text" name="Fornecedor" placeholder="Fornecedor">
-				<input class="search" type="text" name="Codigo"  placeholder="Codigo">
-				<input class="search" type="text" name="Descrição"  placeholder="Descrição">
+				<form action="/filter" method="post" >
+					<input class="search" type="text" name="Fornecedor" placeholder="Fornecedor">
+					<input class="search" type="text" name="Codigo"  placeholder="Codigo">
+					<input class="search" type="text" name="Descricao"  placeholder="Descrição">
+					<button type="submit">Pesquisar</button>
+				</form>
 			</div>
 		</nav>
 

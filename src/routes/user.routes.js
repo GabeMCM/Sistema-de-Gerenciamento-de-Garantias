@@ -6,5 +6,6 @@ route.post("/save", userController.save);
 route.get("/:status?/getById/:id/:method", userController.getById);
 route.post("/update/:id", userController.updateItem);
 route.get("/delete/:id", userController.delItem);
+route.post("/filter", userController.filterData);
 
 module.exports = route;
