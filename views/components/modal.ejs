@@ -1,0 +1,18 @@
+<section id="modal">
+  <div id="card">
+    <div id="fechar">
+      <a href="/All">x</a>
+    </div>
+    <h2>Confirmação</h2>
+    <hr />
+    <div id="confirm">
+      <p>Deseja mesmo apagar este item? <%= obj.codInt %></p>
+    </div>
+    <div id="btnNot">
+      <a href="/All">Não</a>
+    </div>
+    <div id="btnYes">
+      <a href="/delete/<%= obj._id %>">Sim</a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,256 @@
+<form action="/update/<%= obj._id %>" method="post">
+  <!-- ********************* PARTE UM ********************* -->
+  <section class="parte-um partes">
+    <!-- ----------------LINHA UM---------------- -->
+    <div class="linha-um linhas">
+      <div class="box">
+        <label for="status">Status da Garantia</label>
+        <div class="box">
+          <input type="text" list="opcoes" name="status" value="<%= obj.status %>">
+          <datalist id="opcoes">
+            <option value="Aberto">
+            <option value="Enviado">
+            <option value="Recusado">
+            <option value="Finalizado">
+          </datalist>
+        </div>
+      </div>
+
+      <div class="box">
+        <label for="lojas">Loja</label>
+        <input
+          id="lojas"
+          name="lojas"
+          type="text"
+          value="<%= obj.lojas %>"
+        />
+      </div>
+
+      <div class="box">
+        <label for="data">Data</label>
+        <input
+          name="data"
+          id="data"
+          type="date"
+          value="<%= obj.data %>"
+        />
+      </div>
+
+      <div class="box">
+        <label for="responsavel">Responsável</label>
+        <input
+          id="responsavel"
+          name="responsavel"
+          type="text"
+          value="<%= obj.responsavel %>"
+        />
+      </div>
+    </div>
+    <!-- ----------------LINHA DOIS---------------- -->
+    <div class="linha-dois linhas">
+      <div class="box">
+        <label for="codInt">Código Produto - LOJA</label>
+        <input
+          name="codInt"
+          id="codInt"
+          type="number"
+          value="<%= obj.codInt %>"
+        />
+      </div>
+
+      <div class="box">
+        <label for="codigoProdutoFornecedor"
+          >Código Produto - MARCA</label
+        >
+        <input
+          name="codigoProdutoFornecedor"
+          id="codigoProdutoFornecedor"
+          type="text"
+          value="<%= obj.codigoProdutoFornecedor %>"
+        />
+      </div>
+
+      <div class="box">
+        <label for="produto">Produto</label>
+        <input
+          name="produto"
+          id="produto"
+          type="text"
+          value="<%= obj.produto %>"
+        />
+      </div>
+
+      <div class="box">
+        <label for="codFornecedor">Codigo Fornecedor</label>
+        <input
+          name="codFornecedor"
+          id="codFornecedor"
+          type="number"
+          value="<%= obj.codFornecedor %>"
+        />
+      </div>
+
+      <div class="box">
+        <label for="fornecedor">Fornecedor</label>
+        <input
+          name="fornecedor"
+          id="fornecedor"
+          type="text"
+          value="<%= obj.fornecedor %>"
+        />
+      </div>
+    </div>
+    <!-- ----------------LINHA TRES---------------- -->
+    <div class="linha-tres linhas">
+      <div class="box">
+        <label for="nfCompra">NF Compra</label>
+        <input
+          name="nfCompra"
+          id="nfCompra"
+          type="text"
+          value="<%= obj.nfCompra %>"
+        />
+      </div>
+
+      <div class="box">
+        <label for="emissaoNfCompra">Emissão</label>
+        <input
+          name="emissaoNfCompra"
+          id="emissaoNfCompra"
+          type="date"
+          value="<%= obj.emissaoNfCompra%>"
+        />
+      </div>
+
+      <div class="box">
+        <label for="quantidade">Quantidade</label>
+        <input
+          name="quantidade"
+          id="quantidade"
+          type="number"
+          value="<%= obj.quantidade %>"
+        />
+      </div>
+
+      <div class="box">
+        <label for="valorUniNota">Valor</label>
+        <input
+          name="valorUniNota"
+          id="valorUniNota"
+          type="number"
+          step="0.01"
+          value="<%= obj.valorUniNota %>"
+        />
+      </div>
+    </div>
+    <!-- ----------------LINHA QUATRO---------------- -->
+    <div class="linha-quatro linhas">
+      <div class="box">
+        <label for="descDefeito">Descrição do defeito</label>
+        <input
+          name="descDefeito"
+          id="descDefeito"
+          type="text"
+          value="<%= obj.descDefeito %>"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- ********************* PARTE DOIS ********************* -->
+  <section class="parte-dois partes">
+    <!-- ----------------LINHA CINCO---------------- -->
+    <div class="linha-cinco linhas">
+      <div class="box">
+        <label for="nfVenda">NF Venda</label>
+        <input
+          name="nfVenda"
+          id="nfVenda"
+          type="number"
+          value="<%= obj.nfVenda %>"
+        />
+      </div>
+
+      <div class="box">
+        <label for="emissaoNfVenda">Emissão</label>
+        <input
+          name="emissaoNfVenda"
+          id="emissaoNfVenda"
+          type="date"
+          value="<%= obj.emissaoNfVenda%>"
+        />
+      </div>
+
+      <div class="box">
+        <label for="nomeCliente">Nome do Cliente</label>
+        <input
+          name="nomeCliente"
+          id="nomeCliente"
+          type="text"
+          value="<%= obj.nomeCliente %>"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- ********************* PARTE TRES ********************* -->
+  <section class="parte-tres partes">
+    <!-- ----------------LINHA SEIS---------------- -->
+    <div class="linha-seis linhas">
+      <div class="box">
+        <label for="numOs">N° OS</label>
+        <input
+          name="numOs"
+          id="numOs"
+          type="number"
+          value="<%= obj.numOs %>"
+        />
+      </div>
+
+      <div class="box">
+        <label for="nfGarantia">NF Garantia</label>
+        <input
+          name="nfGarantia"
+          id="nfGarantia"
+          type="number"
+          value="<%= obj.nfGarantia %>"
+        />
+      </div>
+
+      <div class="box">
+        <label for="emissaoNfGarantia">Emissão</label>
+        <input
+          name="emissaoNfGarantia"
+          id="emissaoNfGarantia"
+          type="date"
+          value="<%= obj.emissaoNfGarantia%>"
+        />
+      </div>
+
+      <div class="box">
+        <label for="dataDaColeta">Data da Coleta</label>
+        <input
+          name="dataDaColeta"
+          id="dataDaColeta"
+          type="date"
+          value="<%= obj.dataDaColeta%>"
+        />
+      </div>
+    </div>
+    <!-- ----------------LINHA SETE---------------- -->
+    <div class="linha-sete linhas">
+      <div class="box">
+        <label for="observacao">Obs</label>
+        <input
+          name="observacao"
+          id="observacao"
+          type="text"
+          value="<%= obj.observacao %>"
+        />
+      </div>
+    </div>
+  </section>
+  <!-- ********************* PARTE QUATRO ********************* -->
+  <!-- ----------------LINHA OITO---------------- -->
+  <button id="add-data" type="submit">Atualizar</button>
+</form>

@@ -1,0 +1,278 @@
+<li>
+  <div class="principalInfo">
+    <div class="select">
+      <div class="itemData">
+        <p class="desc">Status</p>
+        <input
+          disabled
+          type="text"
+          class="inputData status"
+          value="<%= obj.status %>"
+        />
+      </div>	
+    </div>
+    <div class="infoData">
+      <div class="itemData" id="codigo">
+        <p class="desc">Cod:</p>
+        <input
+          disabled
+          type="text"
+          class="inputData"
+          value="<%= obj.codInt %>"
+        />
+      </div>
+      <div class="itemData" id="produto">
+        <p class="desc">Desc:</p>
+        <input
+          disabled
+          type="text"
+          class="inputData"
+          value="<%= obj.produto %>"
+        />
+      </div>
+      <div class="itemData" id="fornecedor">
+        <p class="desc">Forn:</p>
+        <input
+          disabled
+          type="text"
+          class="inputData"
+          value="<%= obj.fornecedor %>"
+        />
+      </div>
+    </div>
+    <div class="buttons">
+      <div class="buttonData" id="edit">
+        <a
+          class="edit-and-delete-button"
+          href="/<%= obj.status %>/getById/<%= obj._id %>/update"
+        >
+          <svg
+            id="edit-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-pencil-square"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"
+            />
+            <path
+              fill-rule="evenodd"
+              d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"
+            />
+          </svg>
+        </a>
+      </div>
+      <div class="buttonData" id="remove">
+        <a
+          class="edit-and-delete-button"
+          href="/<%= obj.status %>/getById/<%= obj._id %>/delete"
+        >
+          <svg
+            id="delete-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-trash-fill"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"
+            />
+          </svg>
+        </a>
+      </div>
+    </div>
+    <div class="showData">
+      <button class="buttonShowData">+</button>
+    </div>
+  </div>
+  <div class="hiddenInformation">
+    <div class="colunmTop">
+
+      <div class="Line">
+        <div class="itemData">
+          <p class="desc">Loja:</p>
+          <input
+            disabled
+            type="text"
+            class="inputData"
+            value="<%= obj.lojas %>"
+          />
+        </div>
+        <div class="itemData">
+          <p class="desc">Data:</p>
+          <input
+            disabled
+            type="text"
+            class="inputData"
+            value="<%= obj.data %>"
+          />
+        </div>
+        <div class="itemData">
+          <p class="desc">Responsável:</p>
+          <input
+            disabled
+            type="text"
+            class="inputData"
+            value="<%= obj.responsavel %>"
+          />
+        </div>
+        <div class="itemData">
+          <p class="desc">COD Prod na NF:</p>
+          <input
+            disabled
+            type="text"
+            class="inputData"
+            value="<%= obj.codigoProdutoFornecedor %>"
+          />
+        </div>
+      </div>
+
+      <div class="Line">
+        <div class="itemData">
+          <p class="desc">Cod. Forn:</p>
+          <input
+            disabled
+            type="text"
+            class="inputData"
+            value="<%= obj.codFornecedor %>"
+          />
+        </div>
+        <div class="itemData">
+          <p class="desc">NF Compra:</p>
+          <input
+            disabled
+            type="text"
+            class="inputData"
+            value="<%= obj.nfCompra %>"
+          />
+        </div>
+        <div class="itemData">
+          <p class="desc">Data de Emissão:</p>
+          <input
+            disabled
+            type="text"
+            class="inputData"
+            value="<%= obj.emissaoNfCompra %>"
+          />
+        </div>
+      </div>
+
+      <div class="Line">
+        <div class="itemData">
+          <p class="desc">Quantidade:</p>
+          <input
+            disabled
+            type="text"
+            class="inputData"
+            value="<%= obj.quantidade %>"
+          />
+        </div>
+        <div class="itemData">
+          <p class="desc">Valor Uni. NF:</p>
+          <input
+            disabled
+            type="text"
+            class="inputData"
+            value="<%= obj.valorUniNota %>"
+          />
+        </div>
+        <div class="itemData">
+          <p class="desc">Valor Total:</p>
+          <input
+            disabled
+            type="text"
+            class="inputData"
+            value="<%= obj.quantidade*obj.valorUniNota %>"
+          />
+        </div>
+      </div>
+
+      <div class="Line">
+        <div class="itemData">
+          <p class="desc">NF/OS de Venda:</p>
+          <input
+            disabled
+            type="text"
+            class="inputData"
+            value="<%= obj.nfVenda %>"
+          />
+        </div>
+        <div class="itemData">
+          <p class="desc">Data de Emissão:</p>
+          <input
+            disabled
+            type="text"
+            class="inputData"
+            value="<%= obj.emissaoNfVenda %>"
+          />
+        </div>
+        <div class="itemData">
+          <p class="desc">Nome do Cliente:</p>
+          <input
+            disabled
+            type="text"
+            class="inputData"
+            value="<%= obj.nomeCliente %>"
+          />
+        </div>
+      </div>
+
+      <div class="Line">
+        <div class="itemData">
+          <p class="desc">NF de Garantia:</p>
+          <input
+            disabled
+            type="text"
+            class="inputData"
+            value="<%= obj.nfGarantia %>"
+          />
+        </div>
+        <div class="itemData">
+          <p class="desc">Data de emissão:</p>
+          <input
+            disabled
+            type="text"
+            class="inputData"
+            value="<%= obj.emissaoNfGarantia %>"
+          />
+        </div>
+        <div class="itemData">
+          <p class="desc">Data da coleta:</p>
+          <input
+            disabled
+            type="text"
+            class="inputData"
+            value="<%= obj.dataDaColeta %>"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="colunmBottom">
+      <div class="defeito">
+        <p class="desc">Defeito:</p>
+        <input
+          disabled
+          type="text"
+          class="inputData"
+          id="inputDefeito"
+          value="<%= obj.descDefeito %>"
+        />
+      </div>
+      <div class="observacao">
+        <p class="desc">Observações:</p>
+        <input
+          disabled
+          type="text"
+          class="inputData"
+          id="inputObs"
+          value="<%= obj.observacao %>"
+        />
+      </div>
+    </div>	
+  </div>
+</li>

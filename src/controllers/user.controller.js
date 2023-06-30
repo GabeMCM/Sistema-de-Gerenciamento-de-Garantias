@@ -1,35 +1,42 @@
-const user = require("../models/User");
+const User = require("../models/User");
+const dataUtils = require("../utils/data.utils");
+const filterUtils = require("../utils/filters.utils");
 
-//MÉTODOS DA ROTA
-////Método de salvar os dados e mandar para o banco de dados
+// Método de salvar os dados e mandar para o banco de dados
 const save = async (req, res) => {
 	const list = req.body;
+	await dataUtils.processedList(list);
+
 	try {
-		await user.create(list);
-		return res.redirect("/All");
+		await User.create(list);
+		res.redirect("/All");
 	} catch (err) {
 		res.status(500).send({ error: err.message });
 	}
 };
 
-////Método de buscar todos os dados
+// Método de buscar todos os dados
 const getAll = async (req, res) => {
 	try {
-		if (req.params.status === "All") {
-			const dataList = await user.find();
+		const { status } = req.params;
+
+		if (status === "All") {
+			const dataList = await User.find();
 			return res.render("index", {
 				dataList,
 				item: null,
 				itemDel: null,
 				statusItem: null,
+				filter: null,
 			});
 		} else {
-			const statusItem = await user.find({ status: req.params.status });
+			const statusItem = await User.find({ status });
 			return res.render("index", {
 				item: null,
 				dataList: null,
 				statusItem,
 				itemDel: null,
+				filter: null,
 			});
 		}
 	} catch (err) {
@@ -37,26 +44,29 @@ const getAll = async (req, res) => {
 	}
 };
 
-////Método para pegar dados pela id e editar para fazer update
+// Método para pegar dados pela ID e editar para fazer update
 const getById = async (req, res) => {
 	try {
-		const dataList = await user.find();
-		const statusItem = await user.find({ status: req.params.status });
-		if (req.params.method == "update") {
-			const item = await user.findOne({ _id: req.params.id });
+		const { method, id, status } = req.params;
+		const statusItem = await User.find({ status });
+
+		if (method === "update") {
+			const item = await User.findOne({ _id: id });
 			return res.render("index", {
 				item,
 				dataList: null,
 				itemDel: null,
 				statusItem,
+				filter: null,
 			});
 		} else {
-			const itemDel = await user.findOne({ _id: req.params.id });
+			const itemDel = await User.findOne({ _id: id });
 			return res.render("index", {
 				item: null,
 				dataList: null,
 				itemDel,
 				statusItem,
+				filter: null,
 			});
 		}
 	} catch (err) {
@@ -64,44 +74,49 @@ const getById = async (req, res) => {
 	}
 };
 
-////Método de filtrar dados
+// Método de filtrar dados
 const filterData = async (req, res) => {
 	try {
-		const fornecedor = req.body.Fornecedor;
-		const codigo = req.body.Codigo;
-		const descricao = req.body.Descricao;
-		const filterByCodigo = await user.find({ codInt: codigo });
-		const filterByProduto = await user.find({ produto: descricao });
-		const filterByFornecedor = await user.find({ fornecedor: fornecedor });
-		console.log({ filterByCodigo, filterByProduto, filterByFornecedor });
-		res.redirect("/All");
+		const { Fornecedor, Codigo, Descricao } = req.body;
+		const dataList = await User.find();
+		const filter = filterUtils.filter(Fornecedor, Codigo, Descricao, dataList);
+
+		return res.render("index", {
+			item: null,
+			dataList: null,
+			statusItem: null,
+			itemDel: null,
+			filter,
+		});
 	} catch (err) {
 		res.status(500).send({ error: err.message });
 	}
 };
 
-////Método para dar update nos dados
+// Método para dar update nos dados
 const updateItem = async (req, res) => {
 	try {
+		const { id } = req.params;
 		const list = req.body;
-		await user.updateOne({ _id: req.params.id }, list);
+
+		await User.updateOne({ _id: id }, list);
 		res.redirect("/All");
 	} catch (err) {
 		res.status(500).send({ error: err.message });
 	}
 };
 
-////Método para excluir dados
+// Método para excluir dados
 const delItem = async (req, res) => {
 	try {
-		await user.deleteOne({ _id: req.params.id });
+		const { id } = req.params;
+		await User.deleteOne({ _id: id });
 		res.redirect("/All");
 	} catch (err) {
 		res.status(500).send({ error: err.message });
 	}
 };
 
-//EXPORTA OS MÉTODOS
 module.exports = {
 	save,
 	getAll,
