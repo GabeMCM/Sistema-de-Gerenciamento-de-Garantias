@@ -6,13 +6,13 @@
       <div class="box">
         <label for="status">Status da Garantia</label>
         <div class="box">
-          <input type="text" list="opcoes" name="status" value="<%= obj.status %>">
-          <datalist id="opcoes">
-            <option value="Aberto">
-            <option value="Enviado">
-            <option value="Recusado">
-            <option value="Finalizado">
-          </datalist>
+          <select name="status">
+            <option value="Lancado" <% if (obj.status === "Lancado") { %> selected <% } %>>Lançado</option>
+            <option value="Aberto" <% if (obj.status === "Aberto") { %> selected <% } %>>Aberto</option>
+            <option value="Enviado" <% if (obj.status === "Enviado") { %> selected <% } %>>Enviado</option>
+            <option value="Recusado" <% if (obj.status === "Recusado") { %> selected <% } %>>Recusado</option>
+            <option value="Finalizado" <% if (obj.status === "Finalizado") { %> selected <% } %>>Finalizado</option>
+          </select>
         </div>
       </div>
 

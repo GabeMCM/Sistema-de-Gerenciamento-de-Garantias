@@ -1,16 +1,17 @@
+require("dotenv").config();
 const express = require("express");
 const path = require("path");
 const userRoute = require("./src/routes/user.routes");
 const connectDatabse = require("./src/database/db");
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT;
 
 /*INFORMANDO QUE O MECANISMO DE VISUALIZAÇÃO(A ENGINE USADA) 
 SERÁ O EJS (PODE USAR HANDLEBARS, PUG, ETC...) 
 E CONFIGURANDO A PASTA DE VISUALIZAÇÃO CORRETA.*/
 app.set("view engine", "ejs");
-app.set('views', path.join(__dirname, 'views'));
+app.set("views", path.join(__dirname, "views"));
 
 //USA OS ARQUIVOS DA PASTAS PUBLIC
 app.use(express.static(path.join(__dirname, "public")));

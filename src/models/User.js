@@ -4,7 +4,7 @@ const UserSchema = new mongoose.Schema({
 	status: {
 		type: String,
 		require: true,
-		default: "Aberto",
+		default: "Lancado",
 	},
 	lojas: {
 		type: String,

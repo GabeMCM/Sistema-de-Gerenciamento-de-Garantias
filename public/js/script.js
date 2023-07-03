@@ -29,6 +29,9 @@ inputStatus.forEach((input) => {
 	} else if (value === "Enviado") {
 		liTag.style.backgroundColor = "grey";
 		return;
+	} else if (value === "Aberto") {
+		liTag.style.backgroundColor = "#191970";
+		return;
 	} else {
 		liTag.style.backgroundColor = "#3f3f9d";
 		return;

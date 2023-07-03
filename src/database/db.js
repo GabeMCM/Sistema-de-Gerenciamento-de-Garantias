@@ -4,7 +4,7 @@ const connectDatabse = () => {
 	console.log("Wait connectiong to the database");
 	mongoose
 		.connect(
-			"mongodb+srv://adm:123@cluster0.f9glqkb.mongodb.net/?retryWrites=true&w=majority",
+			process.env.DB_URI,
 			{
 				useNewUrlParser: true,
 				useUnifiedTopology: true,
