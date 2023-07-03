@@ -1,6 +1,26 @@
-const User = require("../models/User");
+const { User, Auth } = require("../models/User");
 const dataUtils = require("../utils/data.utils");
 const filterUtils = require("../utils/filters.utils");
+
+//Método de inicio
+const open = (req, res) => {
+	res.render("login");
+};
+
+//Método de autenticação simples
+const login = async (req, res) => {
+	try {
+		const dataUser = await Auth.find();
+		const { user, pass } = req.body;
+		if (dataUser[0].user === user && dataUser[0].pass === pass) {
+			res.redirect("/All");
+		} else {
+			res.status(401).send("user not founded")
+		}
+	} catch (err) {
+		res.status(500).send({ error: err.message });
+	}
+};
 
 // Método de salvar os dados e mandar para o banco de dados
 const save = async (req, res) => {
@@ -124,4 +144,6 @@ module.exports = {
 	updateItem,
 	delItem,
 	filterData,
+	login,
+	open,
 };

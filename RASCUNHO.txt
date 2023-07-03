@@ -58,3 +58,56 @@
 }
 
 34:30
+
+
+
+
+const express = require('express');
+const jwt = require('jsonwebtoken');
+const dotenv = require('dotenv');
+
+dotenv.config(); // Carrega as variáveis de ambiente do arquivo .env
+
+const app = express();
+
+// Rota para gerar o token de autenticação
+app.get('/api/login', (req, res) => {
+  // Autenticação do usuário (pode ser um banco de dados, serviço de autenticação externo, etc.)
+  const user = {
+    id: 1,
+    username: 'usuario'
+  };
+
+  // Gera o token JWT
+  const token = jwt.sign(user, process.env.JWT_SECRET);
+
+  res.json({ token });
+});
+
+// Middleware para autenticação
+const authenticate = (req, res, next) => {
+  const token = req.header('Authorization');
+
+  if (!token) {
+    return res.status(401).json({ message: 'Token não fornecido.' });
+  }
+
+  try {
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    req.user = decoded;
+    next();
+  } catch (err) {
+    res.status(401).json({ message: 'Token inválido.' });
+  }
+};
+
+// Rota protegida
+app.get('/api/dados', authenticate, (req, res) => {
+  res.json({ message: 'Dados protegidos pela autenticação.' });
+});
+
+// Inicializa o servidor
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Servidor iniciado na porta ${PORT}`);
+});

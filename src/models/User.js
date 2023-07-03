@@ -102,6 +102,18 @@ const UserSchema = new mongoose.Schema({
 	},
 });
 
-const User = mongoose.model("User", UserSchema);
+const authSchema = new mongoose.Schema({
+	user: {
+		type: String,
+		require: true,
+	},
+	pass: {
+		type: String,
+		require: true,
+	},
+}, { collection: 'auth' });
 
-module.exports = User;
+const User = mongoose.model("User", UserSchema);
+const Auth = mongoose.model("Auth", authSchema);
+
+module.exports = { User, Auth, };
