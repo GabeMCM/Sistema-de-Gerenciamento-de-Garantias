@@ -68,39 +68,39 @@ A seguir estão alguns prints do sistema:
 A estrutura de arquivos e pastas do projeto segue o seguinte padrão:
 
 projeto/
-  ├── .env
-  ├── .env.exemple
-  ├── .gitignore
-  ├── index.js
-  ├── package-lock.json
-  ├── package.json
-  ├── public/
-  │    ├── js/
-  │    │    └── script.js
-  │    ├── style/
-  │    │    ├── login.css
-  │    │    └── style.css
-  │    └── ...
-  ├── src/
-  │    ├── controllers/
-  │    │    └── user.controller.js
-  │    ├── database/
-  │    │    └── db.js
-  │    ├── models/
-  │    │    └── User.js
-  │    ├── routes/
-  │    │    └── user.routes.js
-  │    ├── utils/
-  │    │    ├── data.utils.js
-  │    │    └── filters.utils.js
-  │    ├── views/
-  │    │    ├── components/
-  │    │    │    ├── formEdit.ejs
-  │    │    │    ├── formInclude.ejs
-  │    │    │    └── li.ejs
-  │    │    ├── index.ejs
-  │    │    └── login.ejs
-  │    └── ...
-  └── ...
+- .env
+- .env.exemple
+- .gitignore
+- index.js
+- package-lock.json
+- package.json
+- public/
+  - js/
+    - script.js
+  - style/
+    - login.css
+    - style.css
+  - ...
+- src/
+  - controllers/
+    - user.controller.js
+  - database/
+    - db.js
+  - models/
+    - User.js
+  - routes/
+    - user.routes.js
+  - utils/
+    - data.utils.js
+    - filters.utils.js
+  - views/
+    - components/
+      - formEdit.ejs
+      - formInclude.ejs
+      - li.ejs
+    - index.ejs
+    - login.ejs
+  - ...
+- ...
 
 
