@@ -32,21 +32,48 @@
 		<% } %>
 
 		<main>
-			<ul>
-				<% if (statusItem === null && filter === null) {%>
-					<% dataList.forEach((list) => { %>
-						<%- include('./components/li', {obj: list}) %>
-					<% }) %>
-				<% } else if (filter === null && dataList === null) { %>
-					<% statusItem.forEach((list) => { %>
-						<%- include('./components/li', {obj: list}) %>
-					<% }) %>
-				<% } else if (statusItem === null && dataList === null) { %>
-					<% filter.forEach((list) => { %>
-						<%- include('./components/li', {obj: list}) %>
-					<% }) %>
-				<% } %>
-			</ul>
+			<table>
+				<thead>
+					<tr>
+						<th>STATUS</th>
+						<th>DATA LANÇAMENTO</th>
+						<th>RESPONSAVEL</th>
+						<th>LOJA</th>
+						<th>COD</th>
+						<th>PROD</th>
+						<th>DEFEITO</th>
+						<th>COD FORNECEDOR</th>
+						<th>FORNECEDOR</th>
+						<th>NF COMPRA</th>
+						<th>EMISSÃO</th>
+						<th>COD PROD NF</th>
+						<th>QUANT</th>
+						<th>VALOR UNI</th>
+						<th>VALOR TOTAL</th>
+						<th>NF VENDA</th>
+						<th>EMISSÃO</th>
+						<th>CLIENTE</th>
+						<th>NF/OS GARANTIA</th>
+						<th>EMISSÃO</th>
+						<th>DATA COLETA</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% if (statusItem === null && filter === null) {%>
+						<% dataList.forEach((list) => { %>
+							<%- include('./components/table', {obj: list}) %>
+						<% }) %>
+					<% } else if (filter === null && dataList === null) { %>
+						<% statusItem.forEach((list) => { %>
+							<%- include('./components/table', {obj: list}) %>
+						<% }) %>
+					<% } else if (statusItem === null && dataList === null) { %>
+						<% filter.forEach((list) => { %>
+							<%- include('./components/table', {obj: list}) %>
+						<% }) %>
+					<% } %>
+				</tbody>
+			</table>	
 		</main>
 			
 		<nav>
