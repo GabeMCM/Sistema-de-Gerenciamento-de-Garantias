@@ -20,6 +20,10 @@ tr:nth-child(even) {
 	background-color: skyblue;
 }
 
+tbody tr:hover{
+	background-color: rgb(193, 196, 199);
+}
+
 td,
 th {
 	padding: 5px 10px;
